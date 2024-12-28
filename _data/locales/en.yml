@@ -11,9 +11,9 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Home
-  categories: Blogs
+  categories: Blog
   tags: Tags
-  archives: Timelines
+  archives: Timeline
   about: About
 
 # the text displayed in the search bar & search results
