@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Routing using Multilayer and Router on Stick
-date: 28-12-2024
+date: 
 categories: [Networking]
 #tag: []
 tags: [Blogs]
