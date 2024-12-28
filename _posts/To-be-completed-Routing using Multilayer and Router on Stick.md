@@ -2,10 +2,11 @@
 layout: post
 title: Routing using Multilayer and Router on Stick
 date: 28-12-2024
-categories: [Blogs]
+categories: [Networking]
 #tag: []
 tags: [Blogs]
 author: Baltej Giri
+by: baltej
 ---
 
 ## LAB Configuration for inter-vlan routing using ROAS, SVI and Routed Ports

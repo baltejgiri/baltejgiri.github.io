@@ -42,7 +42,7 @@ social:
     #- https://github.com/baltejgiri # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/baltej-giri
+    #- https://www.linkedin.com/in/baltej-giri
 
 # Site Verification Settings
 webmaster_verifications:
