@@ -2,9 +2,9 @@
 layout: post
 title: Hello World
 date: 01-01-2025
+author: Baltej Giri
 #categories: []
-#tag: []
-# Welcome to my blogpost!
+tag: [blog]
 ---
 Hello everyone!
 
