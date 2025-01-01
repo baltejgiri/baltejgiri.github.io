@@ -46,6 +46,6 @@ The short and mid-term goals are the objectives of long-term goals. The long-ter
 ## Certifications
 IT certifications are great way to prove the skills that an individual has in the field. However, getting an IT certification itself does not help. An IT certification can help to get a job interview or fullfil a requirement on on a job description but what matters on the actual job is experience and deep understanding of protocols.
 
-IT certs can be used to learn the skills, they have a good cubiculum to follow but while pursuing a certification, many focus on just getting a certification by all means and often it becomes a chasing game.
+IT certs can be used to learn the skills, they have a good curriculum to follow but while pursuing a certification, many focus on just getting a certification by all means and often it becomes a chasing game.
 
 Instead solely focusing on getting a certification, in my opinion it is better to use the certification curriculum and master the each concepts. Understand the fundamentals of protocols and technologies. It is important to take time and have a understanding of skills tested in the cert which will pay-off twice, first to excel at job and second to obtain a official cert.

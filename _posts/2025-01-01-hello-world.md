@@ -2,7 +2,7 @@
 layout: post
 title: Hello World
 date: 01-01-2025
-author: Baltej Giri
+author: 
 #categories: []
 tag: [blog]
 ---
