@@ -4,7 +4,6 @@ title: Hello World
 date: 01-01-2025
 #categories: []
 #tag: []
-#author: baltejgiri
 # Welcome to my blogpost!
 ---
 Hello everyone!
