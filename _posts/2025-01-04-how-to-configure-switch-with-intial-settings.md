@@ -9,7 +9,7 @@ tag: [blog, ccna]
 
 >> In progress..
 
-This blogpost will describe how does Device(Switch/Router) functions and what initial configurations are done on out of the box switch.
+This blogpost will describe boot process and initial device configurations on a out of box switch/router. Boot process is also useful in the event of switch/router is no longer accessible and it helps with password recovery.
 
 # Topics
 - Boot Process
@@ -140,7 +140,7 @@ Switch LED indicators are useful when we are physically inspecting switch status
 
 ### Recovering from system crash
 
-__Recovering from a System Crash__, If the operating system or system files on a Cisco switch are missing, corrupted, or damaged the switch typically enter into bootloader mode also referred as __ROMmon__ mode instead of booting into the normal operating system.
+__Recovering from a System Crash__, if the operating system or system files on a Cisco switch are missing, corrupted, or damaged the switch typically enter into bootloader mode also referred as __ROMmon__ mode instead of booting into the normal operating system.
 
 A console cable is required to access boot loader. The following explains the process:
 
