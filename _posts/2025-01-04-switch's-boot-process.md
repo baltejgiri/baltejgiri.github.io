@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Switch's Boot process
+title: Switch's Boot Process
 date: 04-01-2025
 author:
 categories: [Networking]
 tag: [blog, ccna]
 ---
 
-Boot process of a new switch involves several steps that allows switch to initialize and become operational. The specific steps can varies between different models of switches or vendors but the basic steps are usually similar across most switches. This blogpost will demonstrate boot process of a Cisco Catalyst 2960 switch. Boot process helps troubleshoot hardware issues on a switch sometimes we can also use this process to ```recover a forgotten password to access the device.```
+Boot process of a switch involves several steps that allows switch to initialize and become operational. The specific steps can varies between different models of switches or vendors but the basic steps are usually similar across most switches. This blogpost will demonstrate boot process of a Cisco Catalyst 2960 switch. Boot process helps troubleshoot hardware issues on a switch sometimes we can also use this process to ```recover a forgotten password to access the device.```
 
 ## Boot Loader
 
@@ -51,7 +51,7 @@ BOOT environment variable is set using the __boot system__ global configuration 
 
 The __show boot__ command shows what the current IOS boot file is set to.
 ```markdown
-switch#show boot
+S1#show boot
 BOOT path-list      : flash:c2960-lanbasek9-mz.122-50.SE4/c2960-lanbasek9-mz.122-50.SE4.bin
 Config file         : flash:/config.text
 Private Config file : flash:/private-config.text
