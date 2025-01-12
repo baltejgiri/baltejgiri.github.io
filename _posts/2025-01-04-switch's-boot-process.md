@@ -1,33 +1,17 @@
 ---
 layout: post
-title: Switch's Boot process and Initial device configuration
+title: Switch's Boot process
 date: 04-01-2025
 author:
 categories: [Networking]
 tag: [blog, ccna]
 ---
 
->> In progress..
+Boot process of a new switch involves several steps that allows switch to initialize and become operational. The specific steps can varies between different models of switches or vendors but the basic steps are usually similar across most switches. This blogpost will demonstrate boot process of a Cisco Catalyst 2960 switch. Boot process helps troubleshoot hardware issues on a switch sometimes we can also use this process to ```recover a forgotten password to access the device.```
 
-This blogpost will describe boot process and initial device configurations on a out of box switch/router. Boot process is also useful in the event of switch/router is no longer accessible and it helps with password recovery.
+## Boot Loader
 
-# Topics
-- Boot Process
-    - Switch Boot Sequence
-    - The boot system Command
-    - LED Indicators on Switch
-    - Recovering from system crash
-- Initial Device Configuration
-    - Switch Port Configuration
-    - Device Remote Access
-    - Remote Access Management
-    - Switch Virtual Interface Configuration
-    - Basic Router Configuration
-    - Configuration Verification
-
-## Boot Process
-
-__The boot loader__ is a program responsible for booting a switch. It runs boot sequence process after switch is powered on.
+The __boot loader__ is a program responsible for booting a switch. It runs boot sequence process after switch is powered on.
 
 The boot loader finds the Cisco IOS image on the switch by first looking in a directory that has the same name as the image file (excluding the .bin extension). If boot loader does not find the operating system software image, boot loader software searches each subdirectory before continuing the search in the original directory.
 
@@ -35,7 +19,7 @@ The operating system then initializes the interfaces using Cisco IOS commands fo
 
 > The boot loader commands support initializing flash,  formatting flash, install a new IOS, changing the BOOT environment variable and recovery of a lost or forgotten passwords.
 
-### Switch Boot Sequence
+## Switch Boot Sequence
 A cisco switch goes through five-step boot sequence process after it is powered on:
 1. Switch loads a power-on self-test (POST) program stored in ROM. POST checks the CPU subsystem. It tests the CPU, DRAM, and the portion of the flash device that makes up the flash file system.
 
@@ -49,14 +33,18 @@ A cisco switch goes through five-step boot sequence process after it is powered 
 
     ![CPU Registers](/assets/cpu-registers.png)
 
+    _Image shows registers on a CPU as well as other components that makes up a CPU._
+
 4. The boot loader initializes the __flash file system__ on the system board.
     > __System board:__ Generally referred as motherboard or PCB (printed circuit board). It connects and allows communications between all the major components of the system - CPU, RAM, Storage, Graphic cards, input/output ports and other peripherals.
 
     ![Cisco Switch board](/assets/cisco-switch-board.jpg)
 
+    _Cisco switch's PCB shown in this picture._
+
 5. Finally, the boot loader locates and loads a default IOS operating system software image into memory and hands control of the switch over to the IOS.
 
-### The boot system Command
+## The boot system Command
 All switches comes with a default image in its flash memory. Often network teams tests the different versions of switch image and decided to use the the image they find is most reliable. Then the image is upload to switch and let switch to use the specified image version when it boots up.
 
 BOOT environment variable is set using the __boot system__ global configuration mode command.
@@ -86,7 +74,7 @@ flash:                           | The storage device
 c2960-lanbasek9-mz.150-2.SE      | The path to the file system
 c2960-lanbasek9-mz.150-2.SE.bin  | The IOS file name
 
-### LED Indicators on Switch
+## LED Indicators on Switch
 Switch LED indicators are useful when we are physically inspecting switch status. The following figure shows eight LED indicators on a Cisco Catalyst 2960 switch.
 
 ![Switch LED Indicators](/assets/2960-switch-led-indicators.jpg)
@@ -138,7 +126,7 @@ Switch LED indicators are useful when we are physically inspecting switch status
     Port LED is alternating green-amber      | PoE is denied because providing power to the powered device will exceed the switch power capacity.
     LED is amber                             | Port PoE is disabled
 
-### Recovering from system crash
+## Recovering from system crash
 
 __Recovering from a System Crash__, if the operating system or system files on a Cisco switch are missing, corrupted, or damaged the switch typically enter into bootloader mode also referred as __ROMmon__ mode instead of booting into the normal operating system.
 
@@ -211,79 +199,3 @@ Final step to load the new IOS type the __boot__ command.
 ```markdown
 switch: boot
 ```
-
-## Initial Device Configuration
-
-Network devices needs initial configuration like assigning management ip address, VLAN (virtual local area network), a topic we will explore in another post and enable SSH protocol.
-
-Network teams usually installs the stable version of firmware as part of initial device configuration.
-
-### Remote Access Management
-
-A switch must have a switch virtual interface (SVI) configured with an IPv4 address, subnet mask, default gateway or an IPv6 address and a prefix length for IPv6. The SVI is a virtual interface, not a physical port on the switch.
-
-To demonstrate the logical topology, a PC would connect to switch's console port using console cable and access switch's command line interface using terminal emulation software. An Ethernet cable from switch's port will connect to router or layer 3 switch's port.
-
-![logical-view-of-pc-switch-layer3-switch](/assets/logical-view-of-pc-switch-layer3-switch.png)
-
-### Switch Virtual Interface Configuration
-
-All ports are assigned to VLAN 1 by default and switches remote management can be setup on vlan 1. For security reasons, the best practice to use a VLAN other than VLAN 1 for management VLAN.
-
-:lab_coat: **Switch virtual interface configuration LAB** 
-
-We're going to create a new VLAN with VLAN number "99" and name "device-mgmt". Then we will setup an IPv4 and IPv6 address on vlan 99's SVI. Therefore we will setup a default gateway for IPv4 and complete this lab verifying the work. At last, we will make sure the running configuration is saved to startup configuration so that we do not loss the configured commands in the event of switch reboots.
-
-Step 1. Create VLAN, name vlan, configure IPv4 and IPv6 to SVI interface and enable it.
-
-```markdown
-switch#configure terminal
-Enter configuration commands, one per line.  End with CNTL/Z.
-switch(config)#vlan 99
-switch(config-vlan)#
-%LINK-5-CHANGED: Interface Vlan99, changed state to up
-switch(config-vlan)#name device_mgmt
-switch(config-vlan)#exit
-switch(config)#interface vlan 99
-switch(config-if)#
-switch(config-if)#ip address 10.1.99.11 255.255.255.0
-switch(config-if)#ipv6 address 2001:db8:acad:99::11/64  
-switch(config-if)#no shutdown
-switch(config-if)#end
-switch#
-%SYS-5-CONFIG_I: Configured from console by console  
-```
-
-Step 2. Setup default gateway address on switch's global configuration mode.
-
-```markdown
-switch#configure terminal
-Enter configuration commands, one per line.  End with CNTL/Z.
-switch(config)#
-switch(config)#ip default-gateway 10.1.99.1
-switch(config)#end
-switch#
-%SYS-5-CONFIG_I: Configured from console by console
-```
-
-Step 3. Verify switch's physical and virtual interfaces.
-
-> __Note:__ An IP address applied to the SVI is only for remote management access to the switch; this does not allow the switch to route Layer 3 packets.
-
-```markdown
-switch#show ip interface brief 
-Interface              IP-Address      OK? Method Status                Protocol 
-FastEthernet0/1        unassigned      YES manual up                    up 
-FastEthernet0/2        unassigned      YES manual down                  down 
-!lines of code is emitted
-GigabitEthernet0/2     unassigned      YES manual down                  down 
-Vlan1                  unassigned      YES manual administratively down down 
-Vlan99                 10.1.99.11      YES manual up                    down
-!
-switch>show ipv6 interface brief 
-Vlan99                 [down/down]
-    FE80::C27B:BCFF:FEC4:A9C1
-    2001:DB8:ACAD:99::11
-!lines of code is emitted
-```
-
