@@ -9,6 +9,7 @@ tag: [blog, ccna]
 
 Boot process of a switch involves several steps that allows switch to initialize and become operational. The specific steps can varies between different models of switches or vendors but the basic steps are usually similar across most switches. This blogpost will demonstrate boot process of a Cisco Catalyst 2960 switch. Boot process helps troubleshoot hardware issues on a switch sometimes we can also use this process to ```recover a forgotten password to access the device.```
 
+
 ## Boot Loader
 
 The __boot loader__ is a program responsible for booting a switch. It runs boot sequence process after switch is powered on.
@@ -19,7 +20,7 @@ The operating system then initializes the interfaces using Cisco IOS commands fo
 
 > The boot loader commands support initializing flash,  formatting flash, install a new IOS, changing the BOOT environment variable and recovery of a lost or forgotten passwords.
 
-## Switch Boot Sequence
+### Switch's Boot Sequence
 A cisco switch goes through five-step boot sequence process after it is powered on:
 1. Switch loads a power-on self-test (POST) program stored in ROM. POST checks the CPU subsystem. It tests the CPU, DRAM, and the portion of the flash device that makes up the flash file system.
 
@@ -44,7 +45,7 @@ A cisco switch goes through five-step boot sequence process after it is powered 
 
 5. Finally, the boot loader locates and loads a default IOS operating system software image into memory and hands control of the switch over to the IOS.
 
-## The boot system Command
+### The boot system Command
 All switches comes with a default image in its flash memory. Often network teams tests the different versions of switch image and decided to use the the image they find is most reliable. Then the image is upload to switch and let switch to use the specified image version when it boots up.
 
 BOOT environment variable is set using the __boot system__ global configuration mode command.
@@ -74,7 +75,7 @@ flash:                           | The storage device
 c2960-lanbasek9-mz.150-2.SE      | The path to the file system
 c2960-lanbasek9-mz.150-2.SE.bin  | The IOS file name
 
-## LED Indicators on Switch
+### LED Indicators on Switch
 Switch LED indicators are useful when we are physically inspecting switch status. The following figure shows eight LED indicators on a Cisco Catalyst 2960 switch.
 
 ![Switch LED Indicators](/assets/2960-switch-led-indicators.jpg)
@@ -199,3 +200,52 @@ Final step to load the new IOS type the __boot__ command.
 ```markdown
 switch: boot
 ```
+
+## Bypass the Configuration (Password Recovery Mode)
+
+Once the switch finishes loading the IOS, it will boot without the old configuration, meaning it will bypass the saved password and other configuration settings.
+
+You should now see the initial setup prompt (or you can enter privileged EXEC mode directly).
+
+### Reset Password
+
+Reset the password. For example, if you want to reset the enable password, use the following command:
+
+```markdown
+S1(config)# enable secret <new_password>
+```
+
+If you have a console password or vty password to reset, enter those commands as well:
+
+```markdown
+S1(config)# line console 0
+S1(config-line)# password new_console_password
+S1(config-line)# login
+
+S1(config)# line vty 0 4
+S1(config-line)# password new_vty_password
+S1(config-line)# login
+```
+### Restore the Original Configuration File
+
+After resetting the password, you may wish to restore the original configuration. You can rename the old config.text back to config.text:
+
+S1# rename flash:config.old flash:config.text
+Or, if needed, you can copy the configuration file from another location or manually reconfigure the switch.
+Save the Configuration
+
+### Finally, save your new configuration:
+
+```markdown
+S1# write memory
+
+```
+### Reboot the switch
+
+If you want to reboot the switch to confirm everything is working properly, simply issue:
+
+```markdown
+S1# reload
+```
+
+This article helps with understanding how switch functions from a hardware level and how a Network engineer can narrow down the issue to specific root cause. The second part of this article demonstrates the process of recovering from system crash as well as recover from locked up device.
