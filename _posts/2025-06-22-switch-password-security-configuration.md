@@ -7,6 +7,9 @@ categories: [Networking]
 tag: [blog, ccna]
 ---
 
+![Password Security](/assets/2025-06-22_secured_cisco_switch.png)
+![CPU Registers](/assets/cpu-registers.png)
+
 ## Cisco Switch Password Security Configuration
 
 Proper password security is essential for protecting your Cisco switch from unauthorized access. Below is a simple checklist and step-by-step guide to configure basic password security on a Cisco switch.
