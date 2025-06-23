@@ -28,8 +28,8 @@ url: "https://baltejgiri.github.io"
 github:
   username: baltejgiri # change to your GitHub username
 
-twitter:
-  username: giribaltej # change to your Twitter username
+linkedin:
+  username: baltej-giri # change to your Linkedin username
 
 social:
   # Change to your full name.
@@ -38,7 +38,7 @@ social:
   email: baltej.giri@live.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/giribaltej # change to your Twitter homepage
+    # https://twitter.com/giribaltej # change to your Twitter homepage
     - https://github.com/baltejgiri # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
