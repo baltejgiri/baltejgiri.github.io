@@ -8,7 +8,6 @@ tag: [blog, ccna]
 ---
 
 ![Password Security](/assets/2025-06-22_secured_cisco_switch.png)
-![CPU Registers](/assets/cpu-registers.png)
 
 ## Cisco Switch Password Security Configuration
 
