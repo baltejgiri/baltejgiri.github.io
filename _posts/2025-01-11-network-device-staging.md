@@ -8,14 +8,11 @@ tag: [blog, ccna]
 ---
 ---
 
-````markdown
 # 🛠️ Layer 2 Switch Staging: A Step-by-Step Guide to Expanding Network Capacity
 
 Expanding your network by adding new switches is a common need in growing IT environments. Whether it's to support additional users, wireless access points, or IP phones, a Layer 2 access switch provides the foundation for connecting more endpoints.
 
 But before a switch enters your production environment, it needs to be staged—a critical process that ensures your device is properly configured, tested, and ready for deployment. In this guide, we’ll walk through the end-to-end process of staging a Layer 2 network switch.
-
----
 
 ## 🎯 Why Stage a Network Switch?
 
@@ -28,8 +25,6 @@ But before a switch enters your production environment, it needs to be staged—
 
 This is especially important when scaling access-layer connectivity across a growing organization.
 
----
-
 ## 📦 When to Stage a Switch
 
 You should stage a Layer 2 switch when:
@@ -39,7 +34,6 @@ You should stage a Layer 2 switch when:
 - Deploying access points or VoIP phones  
 - Rolling out standardized branch-site hardware  
 
----
 
 ## 🪜 Layer 2 Switch Staging Process
 
@@ -53,8 +47,6 @@ Start with a physical inspection of the switch:
 
 If applicable, rack-mount the switch temporarily in your staging area.
 
----
-
 ### 2. Install Modules and Accessories
 
 Install any required accessories:
@@ -64,8 +56,6 @@ Install any required accessories:
 - Power supplies or RPS units  
 
 Ensure uplink modules are seated properly and stack topology is cabled correctly if using switch stacking.
-
----
 
 ### 3. Initial Console Access and Setup
 
@@ -251,10 +241,3 @@ A bit of time invested in staging saves hours of troubleshooting and rework late
 ---
 
 *Need a downloadable checklist or configuration template? Let me know and I’ll generate one tailored to your environment!*
-
-```
-
----
-
-Let me know if you want this in a `.md` file directly, exported as PDF, or need a diagram or checklist to go along with the blog post.
-```
