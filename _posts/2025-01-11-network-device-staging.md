@@ -8,13 +8,13 @@ tag: [blog, ccna]
 ---
 ---
 
-# 🛠️ Layer 2 Switch Staging: A Step-by-Step Guide to Expanding Network Capacity
+# Layer 2 Switch Staging: A Step-by-Step Guide to Expanding Network Capacity
 
 Expanding your network by adding new switches is a common need in growing IT environments. Whether it's to support additional users, wireless access points, or IP phones, a Layer 2 access switch provides the foundation for connecting more endpoints.
 
 But before a switch enters your production environment, it needs to be staged—a critical process that ensures your device is properly configured, tested, and ready for deployment. In this guide, we’ll walk through the end-to-end process of staging a Layer 2 network switch.
 
-## 🎯 Why Stage a Network Switch?
+## Why Stage a Network Switch?
 
 **Device staging** is the act of preparing a network switch in a controlled setting before it goes live in your network. This process ensures:
 
@@ -25,7 +25,7 @@ But before a switch enters your production environment, it needs to be staged—
 
 This is especially important when scaling access-layer connectivity across a growing organization.
 
-## 📦 When to Stage a Switch
+## When to Stage a Switch
 
 You should stage a Layer 2 switch when:
 
@@ -35,7 +35,7 @@ You should stage a Layer 2 switch when:
 - Rolling out standardized branch-site hardware  
 
 
-## 🪜 Layer 2 Switch Staging Process
+## Layer 2 Switch Staging Process
 
 ### 1. Unboxing and Inspection
 
@@ -220,7 +220,7 @@ Label the switch and prepare it for deployment.
 
 ---
 
-## 🚚 Deployment Checklist
+## Deployment Checklist
 
 Before shipping or transporting the device:
 
@@ -232,7 +232,7 @@ Before shipping or transporting the device:
 
 ---
 
-## ✅ Final Thoughts
+## Final Thoughts
 
 Staging a Layer 2 switch helps ensure a smooth transition from the lab to the field. By following a standardized process, you reduce errors, increase speed of deployment, and ensure every switch that enters production is fully operational and secure.
 
