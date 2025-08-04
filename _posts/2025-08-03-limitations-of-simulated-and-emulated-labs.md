@@ -62,6 +62,7 @@ Gig1/0/1 		    connected 	1 	auto 		auto 		10/100BaseTX
 %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/1, changed state to down
 
 3650-SW-1(config-if)#speed 100
+
 3650-SW-1(config-if)#?
 arp 		Set arp type (arpa, probe, snap) or timeout
 bandwidth 	Set bandwidth informational parameter
@@ -96,6 +97,9 @@ tx-ring-limit 	Configure PA level transmit ring limit
 3650-SW-1#
 %SYS-5-CONFIG_I: Configured from console by console
 ```
+The example above shows that, when using the question mark for help, the available syntax only shows speed, but not duplex.
+
+After setting the interface speed to 100 Mbps, the output reflects this:
 
 ```bash
 3650-SW-1#show int gig1/0/1
@@ -131,9 +135,11 @@ Gig1/0/1 		connected 	1 	auto 		a-100 		10/100BaseTX
 
 ## WS-3560-24PS Series switches
 
-Another simulated Cisco Catalyst 3560, 24 port switch. It runs on a “C3560-ADVIPSERVICESK” image and uses the 12.2 software version.
+This is another simulated switch, the Cisco Catalyst 3560 24-port model. It runs the “C3560-ADVIPSERVICESK” image with software version 12.2.
 
 ![Packet Tracer C3650 Switch Lab ](/assets/2025-08-03-limitations-of-simulated-and-emulated-labs_3560_switch_lab.png)
+
+Before setting the links speed to 100Mb/s it shows the speeds of link between Switch 1 and Switch 2 is 1000Mb/s.
 
 ```bash
 3560-SW-1#show int gig0/1
@@ -171,9 +177,7 @@ Port 		Name 	Status 		Vlan 	Duplex 		Speed 		Type
 Gig0/1 			connected 	1	 auto 		auto 		10/100BaseTX
 ```
 
-The output showing in “show int gig0/1” command shows link is Full-Duplex and running at 1000Mb/s.
-
-I have set the speed on interface gig0/1 to 100Mb/s  on 3560-SW-1.
+The output showing in “show int gig0/1” command shows link is Full-Duplex and running at 1000Mb/s before it is set to 100Mb/s on Switch 1.
 
 ```bash
 3560-SW-1(config)#int gig0/1
@@ -235,4 +239,12 @@ Gig0/1 		connected 	1 		auto 	a-100 	10/100BaseTX
 
 ## Summary
 
-The output shows above shows switch 3650, version 16.3.2 and 3560 version 12.2 does not have sub-interface “duplex”. Further, I this lab requires physical switches to understand the different speeds and duplex settings. Additianolly, CML did show "duplex" sub-interface however, sub-interface "speed" on did not show/work. CM uses the Linux based emulation of version "Version 17.15.1".
+The output above demonstrates that in Cisco Packet Tracer:
+
+- The Catalyst 3650 running IOS version 16.3.2, and the 3560 running version 12.2, do not support the duplex command in interface configuration mode.
+
+- Only the speed command is available to manually set interface speeds.
+
+To fully understand and test duplex and speed configurations, physical switches are recommended.
+
+Additionally, in Cisco Modeling Labs (CML), the duplex command is available, but the speed command does not always function as expected. CML uses a Linux-based emulation image running IOS version 17.15.1.
