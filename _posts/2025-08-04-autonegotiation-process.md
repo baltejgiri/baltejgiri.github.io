@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Autonegotiation and More
+title: Autonegotiation on Ethernet Link
 date: 2025-08-04
 author: 
 #categories: []
