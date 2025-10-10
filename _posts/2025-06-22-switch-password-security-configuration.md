@@ -52,7 +52,7 @@ Switch(config)# enable secret YOUR_ENABLE_PASSWORD
 ````
 
 #### 4. Encrypt All Passwords
-Service passowrd-encryption command encrypts the plain text passwords to Type 7, type 7 was primarily intended to prevent casual viewing of passwords.
+Service password-encryption command encrypts the plain text passwords to Type 7, type 7 was primarily intended to prevent casual viewing of passwords.
 ````plaintext
 Switch(config)# service password-encryption
 ````

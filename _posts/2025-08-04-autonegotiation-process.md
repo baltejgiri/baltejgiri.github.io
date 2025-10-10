@@ -3,8 +3,8 @@ layout: post
 title: Autonegotiation on Ethernet Link
 date: 2025-08-04
 author: 
-#categories: []
-tag: [blog]
+#categories: [Networking]
+tag: [blog, ccna]
 ---
 
 ## What is Autonegotiation?
