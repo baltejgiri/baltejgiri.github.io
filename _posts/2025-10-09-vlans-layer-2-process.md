@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Virtual Area Network
+title: Virtual Local Area Network
 date: 2025-10-09
 author: 
 #categories: [Networking]
 tag: [blog, ccna]
 ---
 
-Before we dive into concept of virtual area network (VLAN), let's see what is a local area network and why do we need VLANs.
+Before we dive into concept of virtual local area network (VLAN), let's see what is a local area network and why do we need VLANs.
 
 ### Local Area Network (LAN)
 
