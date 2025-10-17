@@ -57,7 +57,7 @@ The output above shows switchport can be set to ***dynamic auto*** or ***dynamic
 
 - A switchport in ***dynamic desirable*** mode will actively try to form a trunk with other Cisco switches. It will form a trunk if connected to another switchport in the following modes:
 
-    ```
+    ```bash
     switchport mode trunk
     switchport mode dynamic desirable
     switchport mode dynamic auto
@@ -96,5 +96,5 @@ VTP can be seen as a way to automate the network administration where a network 
 
 It sends VTP advertisements (messages) across trunk links to other switches within the same VTP domain. The advertisement contains the VLAN configuration information.
 
-
+        To be continued.
     
