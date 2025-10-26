@@ -21,22 +21,26 @@ DTP negotiation involves the exchange of DTP frames between two neighboring swit
 
     - A switchport in dynamic auto mode will NOT actively try to form a trunk with other Cisco switches, however it will form a trunk if the switch connected to it is actively trying to form a trunk. It will form a trunk with a switchport in following modes:
 
-        ```switchport mode trunk```
-        ```switchport mode dynamic desirable```
+```bash
+    switchport mode trunk
+    switchport mode dynamic desirable
+    ```
 
 #### Dynamic Desirable
-    - Actively initiates trunking by sending negotiation messages to dynamically choose weather to start trunking. The switch's interface becomes trunk port if the neighboring interface is set to trunk or dynamic desirable mode.
+
+- Actively initiates trunking by sending negotiation messages to dynamically choose weather to start trunking. The switch's interface becomes trunk port if the neighboring interface is set to trunk or dynamic desirable mode.
 
 #### Trunk Mode
-    - The interface is permanently set to trunking mode. It sends DTP frames to try and convert the neighboring switch interface into a trunk as well.
+
+- The interface is permanently set to trunking mode. It sends DTP frames to try and convert the neighboring switch interface into a trunk as well.
 
 #### Access Mode
 
-    - The port is permanently set to non-trunking (access) mode. It will not form a trunk even if the neighboring switch's interface request it.
+- The port is permanently set to non-trunking (access) mode. It will not form a trunk even if the neighboring switch's interface request it.
 
 #### Nonegotiation Mode
 
-    - Disables DTP completely - the port won't send or be affected by DTP frames.
+- Disables DTP completely - the port won't send or be affected by DTP frames.
 
 - DTP will not form a trunk link with a router, PC, etc. The switchport will be in access mode.
 
@@ -120,14 +124,14 @@ VTP packets are transmitted within either Inter-Switch Link (ISL) frames or IEEE
 
 VTP packets contain following fields in the header:
 
-    - VTP protocol version 1, 2, and 3.
-    - VTP message types:
-        - Summary advertisements
-        - Subset advertisement
-        - Advertisement requests
-        - VTP join messages
-    - Management domain length
-    - Management domain name
+- VTP protocol version 1, 2, and 3.
+- VTP message types:
+    - Summary advertisements
+    - Subset advertisement
+    - Advertisement requests
+    - VTP join messages
+- Management domain length
+- Management domain name
 
 ### Configuration Revision Number
 
@@ -146,11 +150,11 @@ Whenever a VLAN is modified (added, deleted, or changed) on server switch, the s
 
 ### Advertisement Request
 
-A switch sends a ***VTP advertisement request*** when it needs to immediatly synchronize its VLAN configuration. This is necessary in three specific scenarious:
+A switch sends a ***VTP advertisement request*** when it needs to immediately synchronize its VLAN configuration. This is necessary in three specific scenarios:
 
-    1. The switch has been ***reset*** (rebooted).
-    2. The ***VTP domain name*** on the switch has been ***changed***.
-    3. The switch receives a ***summary advertisement*** showing a ***higher configuration revision number*** than its own.
+- The switch has been ***reset*** (rebooted).
+- The ***VTP domain name*** on the switch has been ***changed***.
+- The switch receives a ***summary advertisement*** showing a ***higher configuration revision number*** than its own.
 
 ### VTP Modes
 
@@ -169,7 +173,6 @@ Transparent switches completely do not participate in the VTP domain. They neith
 The Off mode is similar to the Transparent mode in that the switch does not participate in VTP management or synchronization. The critical distinction is that switches in Off mode do not forward VTP advertisements at all, effectively blocking the VTP traffic on that trunk. (In Server, Client, and Transparent modes, VTP advertisements are processed or forwarded once the switch is in the management domain state.)
 
 ### DTP Configuration
-
 
 ## Summary
 
