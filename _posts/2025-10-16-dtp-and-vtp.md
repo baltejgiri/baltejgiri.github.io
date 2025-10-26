@@ -180,4 +180,4 @@ The Off mode is similar to the Transparent mode in that the switch does not part
 
 - Cisco Official Cert Guide [CCNA 200-301 Official Cert Guide Library, 2nd Edition](https://www.ciscopress.com/store/ccna-200-301-official-cert-guide-library-9780138221393)
 - Video [Jeremy's IT Lab YouTube Videos](https://www.youtube.com/@JeremysITLab)
-- Cisco Whitepaper [Configure VLAN Trunk Protocol (VTP)](https://www.cisco.com/c/en/us/support/docs/lan-switching/vtp/10558-21.html)
+- Cisco Whitepaper [Understand VLAN Trunking Protocol](https://www.cisco.com/c/en/us/support/docs/lan-switching/vtp/10558-21.html)
