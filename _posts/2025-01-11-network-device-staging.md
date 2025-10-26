@@ -224,11 +224,11 @@ Label the switch and prepare it for deployment.
 
 Before shipping or transporting the device:
 
-* ✅ Configuration is saved
-* ✅ Documentation is complete
-* ✅ Device is labeled clearly
-* ✅ Verified connectivity and VLANs
-* ✅ Uplink and management ports tested
+* Configuration is saved
+* Documentation is complete
+* Device is labeled clearly
+* Verified connectivity and VLANs
+* Uplink and management ports tested
 
 ---
 
@@ -238,6 +238,3 @@ Staging a Layer 2 switch helps ensure a smooth transition from the lab to the fi
 
 A bit of time invested in staging saves hours of troubleshooting and rework later.
 
----
-
-*Need a downloadable checklist or configuration template? Let me know and I’ll generate one tailored to your environment!*
