@@ -19,12 +19,12 @@ DTP negotiation involves the exchange of DTP frames between two neighboring swit
 
 #### Dynamic Auto
 
-    - A switchport in dynamic auto mode will NOT actively try to form a trunk with other Cisco switches, however it will form a trunk if the switch connected to it is actively trying to form a trunk. It will form a trunk with a switchport in following modes:
+- A switchport in dynamic auto mode will NOT actively try to form a trunk with other Cisco switches, however it will form a trunk if the switch connected to it is actively trying to form a trunk. It will form a trunk with a switchport in following modes:
 
-```bash
-    switchport mode trunk
-    switchport mode dynamic desirable
-    ```
+```plaintext
+switchport mode trunk
+switchport mode dynamic desirable
+```
 
 #### Dynamic Desirable
 
