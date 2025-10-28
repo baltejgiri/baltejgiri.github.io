@@ -4,7 +4,7 @@ title: Understand Dynamic Trunk (DTP) and VLAN Trunk Protocol (VTP)
 date: 2025-10-16
 author: 
 #categories: [Networking]
-tag: [blog, ccna,ccnp]
+tag: [blog,ccna,ccnp]
 ---
 
 ## Understand Dynamic Trunking Protocol (DTP)
@@ -135,7 +135,7 @@ VTP packets contain following fields in the header:
 
 ### Configuration Revision Number
 
-The VTP configuration revision number is a 32-bit value used to track changes to the VLAN configuration. Every VTP device maintains its own revision number, which is included in most VTP packets sent. This number helps receiving device determine if the information is newer than their current configuration. The revision number is ***incremented by one*** with every VLAN change. To ***reset***the revision number on a switch, you must temporarily change the VTP domain name and then revert it to the original name.
+The VTP configuration revision number is a 32-bit value used to track changes to the VLAN configuration. Every VTP device maintains its own revision number, which is included in most VTP packets sent. This number helps receiving device determine if the information is newer than their current configuration. The revision number is ***incremented by one*** with every VLAN change. To ***reset*** the revision number on a switch, you must temporarily change the VTP domain name and then revert it to the original name.
 
 ### Summary Advertisements
 
