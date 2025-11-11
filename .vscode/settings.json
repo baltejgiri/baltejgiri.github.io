@@ -27,5 +27,14 @@
   "terminal.integrated.profiles.osx": {
     "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] }
   },
-  "cSpell.words": ["autonegotiation", "RSTP", "switchport", "switchports"]
+  "cSpell.words": [
+    "autonegotiation",
+    "backplane",
+    "BPDU",
+    "BPDUs",
+    "perticualr",
+    "RSTP",
+    "switchport",
+    "switchports"
+  ]
 }
