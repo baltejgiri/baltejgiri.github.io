@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Career Update
-date: 2025-11-01
+date: 2026-01-01
 author: 
 #categories: [Career Update]
 tag: [blog]
