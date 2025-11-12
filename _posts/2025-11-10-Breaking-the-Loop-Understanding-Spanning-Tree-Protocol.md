@@ -315,5 +315,5 @@ This phase establishes the new Root Port (RP) and Designated Ports (DPs) and pre
 
 - Study guide by [David Hucaby](https://www.linkedin.com/in/david-hucaby-b60b7316a/) [CCNP Routing and Switching SWITCH 300-115 Official Cert Guide](https://www.ciscopress.com/store/ccnp-routing-and-switching-switch-300-115-official-9781587205606)
 - Study gudie by Wendell Odom, David Hucaby, Jason Gooley [CCNA 200-301 Official Cert Guide Library, 2nd Edition](https://www.ciscopress.com/store/ccna-200-301-official-cert-guide-library-9780138221393)
-- Article by [Radia Perlman] (https://en.wikipedia.org/wiki/Radia_Perlman) (An algorithm for distributed computation of a spanningtree in an extended LAN)[https://dl.acm.org/doi/pdf/10.1145/318951.319004]
+- Article by [Radia Perlman,](https://en.wikipedia.org/wiki/Radia_Perlman) [An algorithm for distributed computation of a spanning tree in an extended LAN](https://dl.acm.org/doi/pdf/10.1145/318951.319004)
 - Cisco whitepaper [Understand Rapid Spanning Tree Protocol (802.1w)](https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/24062-146.html)
