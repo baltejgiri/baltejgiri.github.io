@@ -19,11 +19,7 @@ tag: [blog,ccna,ccnp]
 
 Radia Perlman published an article [An algorithm for distributed computation of a spanning tree in an extended LAN by Radia Perlman](https://dl.acm.org/doi/pdf/10.1145/318951.319004) in 1985. In the article, Radia Perlman beautifully described the STP in an artistic way.
 
-![image-2](/assets/image-2.png)
-
-## The STP Algorithm
-
-## Spanning Tree Computation
+![STP Poetry](/assets/img/spanning_tree_poetry.png)
 
 ## Why We Need Spanning Tree Protocol?
 
@@ -130,7 +126,7 @@ Output shows VLAN 1 has bridge priority of 32768 + VLAN number of 1, bridge id b
 
 **The election of a root bridge**, Switches boots, assumes itself as a root bridge but as soon as other switches are powered on election process of a root bridge starts by _sending out BPDUs with a root bridge ID equal to its own bridge ID and a senders bridge ID that it its owns bridge ID._
 
-![alt text](image-2.png)
+![spanning_tree_switch_output](/assets/img/spanning_tree_protocol_1.png)
 
 Senders bridge ID (local switch's bridge ID) simply tells other switches who is the actual sender of the BPDU message. After a root bridge is decided on, configuration BPDUs are sent only by the root bridge. All other bridges must forward or relay the BPDUs, adding their own sender bridge IDs to the message.
 
@@ -185,7 +181,7 @@ In each determination process discussed so far, two or more links might have ide
 3. Lowest sender bridge ID
 4. Lowest sender port ID
 
-![alt text](image-5.png)
+![Spanning Tree Protocol Topology](/assets/img/spanning_tree_topology.png)
 
 Explanation of Election process of Root bridge, root port and designated port.
 
@@ -205,64 +201,114 @@ When Switch C communicates with Switch A, it receives BPDUs advertising a root p
 When Switch C communicates with Switch B across the B-C link, both switches advertise a root path cost of 8. However, Switch C has the higher bridge ID (32768:0000.0000.000c), causing it to lose the designated port election. Switch C gi1/0/2 becomes neither a root port nor a designated port, forcing it into the blocking state to prevent loops.
 
 ---
-
 ## STP States
-### STP Timers
-### Topology Changes
-#### Indirect Topology Changes
-#### Insignificant Topology Changes
+
+For a switch port to participate in STP and eventually forward traffic, it must pass through a set of sequential states, designed to prevent network loops.
+
+* **Disabled**
+  * **Role:** Administrative shutdown.
+  * **Action:** The port is shut down by a network administrator or a system fault. This state is **outside** the normal STP progression.
+
+* **Blocking:**
+    * **Role:** Loop prevention and startup.
+    * **Action:** The initial state for any port to prevent loops. The port **only receives BPDUs** to hear about the topology. It **cannot** send/receive data or learn MAC addresses. Ports designated as redundant links (Alternate/Backup) also remain in this state.
+
+* **Listening:**
+  * **Role:** Determining port status.
+  * **Action:** The port is transitioning toward the active state. It **sends and receives BPDUs** to actively participate in the STP election process (determining if it should be a Root Port or Designated Port). It **cannot** send/receive data or learn MACs. If the port loses the election, it reverts to the Blocking state.
+
+* **Learning:**
+  * **Role:** Preparing to forward.
+  * **Action:** After a **Forward Delay Timer** (default 15 seconds) in the Listening state, the port enters Learning. It **starts learning MAC addresses** (adding them to the MAC table) but still **cannot** send/receive data frames. This prepares the switch to efficiently forward traffic immediately upon activation.
+
+* **Forwarding:**
+  * **Role:** Active participation.
+  * **Action:** After a second **Forward Delay Timer** (default 15 seconds) in the Learning state, the port enters the operational state. It is now a fully functioning port: it **sends/receives data frames**, learns MAC addresses, and continues processing BPDUs. Only **Root Ports** and **Designated Ports** reach this state.
+
+## STP Timers
+
+STP uses three primary timers to manage the topology changes, ensuring the network has time to stabilize and prevent temporary loops during port state transitions.
+
+| Timer | Default Value | Purpose |
+| :--- | :--- | :--- |
+| **Hello Time** | **2 seconds** | The interval at which the **Root Bridge** sends out **Bridge Protocol Data Units (BPDUs)**. This is the heartbeat of the STP topology. |
+| **Forward Delay** | **15 seconds** | The time a port spends in both the **Listening** state and the **Learning** state (a total of 30 seconds to transition to Forwarding). This timer prevents temporary loops by delaying the start of data forwarding. |
+| **Max Age** | **20 seconds** | The maximum time a switch will store a superior BPDU without hearing a new one from the Root Bridge. If this time expires, the switch assumes the Root Bridge has failed or the link to it is down and initiates a new STP election. |
+
+## Topology Changes
+
+A Topology Change (TCN) occurs when the STP structure is modified, typically due to a link failure or a new link becoming active. This forces the switches to rapidly age out their MAC address tables to prevent forwarding data to obsolete destinations.
+
+### Indirect Topology Changes
+An indirect topology change is an event that **affects connectivity to the Root Bridge** but is not detected directly by the root.
+
+* **Example:** A non-root switch (SW2) loses its Root Port link to another non-root switch (SW3). SW2 must now find a new path to the Root Bridge.
+* **Result:** The Max Age timer expires, forcing the switch to *assume* the Root Bridge is gone and initiate a full recalculation. This process takes 50 seconds (Max Age + 2x Forward Delay) in traditional STP, leading to significant convergence delay.
+
+### Insignificant Topology Changes
+This refers to events that **do not impact the active forwarding path** of the spanning tree and therefore do not trigger a fast convergence mechanism.
+
+* **Example:** A port that was already in the **Blocking** state goes down. Since it wasn't forwarding traffic, its failure doesn't change the active path or cause a loop.
+* **Result:** These changes are often ignored by the main TCN process, though local updates may still occur.
 
 ## Types of STP
 
-### Common Spanning Tree
+There are several evolutions of STP, mainly differing in how they handle multiple VLANs and how quickly they converge.
 
-### Per-VLAN Spanning Tree
+### Common Spanning Tree (CST)
+* **Protocol:** Defined by the original IEEE 802.1D standard.
+* **Function:** Creates a **single spanning tree** instance for the entire network, regardless of how many VLANs exist.
+* **Drawback:** It treats all VLANs as a single broadcast domain for STP purposes. This means all VLANs follow the same single forwarding path, wasting bandwidth on redundant links. Convergence is slow (50 seconds).
 
-### Per-VLAN Spanning Tree Plus
+### Per-VLAN Spanning Tree (PVST)
+* **Protocol:** Cisco proprietary enhancement.
+* **Function:** Runs a **separate, independent STP instance for every VLAN**.
+* **Advantage:** Allows for **load balancing**. You can configure VLAN 10 to forward traffic over one link and VLAN 20 to forward traffic over a different link (by manipulating the Root Bridge priority for each VLAN), utilizing all available links and improving resource usage.
 
+### Per-VLAN Spanning Tree Plus (PVST+)
+* **Protocol:** Cisco proprietary enhancement that builds upon PVST.
+* **Function:** Provides the same per-VLAN STP functionality as PVST but adds **interoperability with standard 802.1Q trunking and the non-Cisco CST protocol**.
+* **Current Status:** PVST+ is the **most common** STP variant used in mixed-vendor Cisco environments today, as it ensures proper functioning when connected to switches running the original CST.
 
+### Rapid Spanning Tree Protocol (RSTP / 802.1w)
+* **Note:** Although not listed, it's the modern successor. It significantly improves convergence time (often less than 1 second) by replacing the timers with a faster handshake process for port role negotiation.
 
-#### Convergence Process
+### STP Convergence Process
 
-### Practical Example
-#### Network Topology
+The **Convergence Process** in traditional Spanning Tree Protocol (STP) is the sequence of events and timers required for all switches in a network to agree on a single, loop-free topology (the spanning tree) after a change occurs.
 
-## Lab Demonstration
+The entire process takes approximately **50 seconds** (in traditional 802.1D STP) when a forwarding path fails.
 
-Following command output shows spanning tree protocol.
+**Failure Detection (Max Age Timer)**
 
-```plaintext
-SW1#show spanning-tree 
+This phase detects the loss of the active link or Root Bridge.
 
-VLAN0001
-  Spanning tree enabled protocol ieee
-  Root ID    Priority    32769
-             Address     5000.0001.0000
-             This bridge is the root
-             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+* **Action:** When a switch loses its Root Port (RP) link or stops receiving BPDUs from its designated neighbor.
+* **Timer:** The switch waits for the **Max Age Timer** (default **20 seconds**) to expire. This period prevents instability from temporary BPDU loss.
+* **Result:** If the timer expires, the switch assumes the current root information is invalid and initiates a new STP election.
 
-  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
-             Address     5000.0001.0000
-             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
-             Aging Time  15  sec
+**Port Re-Election and Delay (Forward Delay Timer)**
 
-Interface           Role Sts Cost      Prio.Nbr Type
-------------------- ---- --- --------- -------- --------------------------------
-Gi0/0               Desg FWD 4         128.1    P2p 
-Gi0/1               Desg FWD 4         128.2    P2p 
-```
-Switch 1 has the lowest bridge ID 32769, a bridge ID is equal to Priority 32769 (a default value on cisco switches and system-id.
+This phase establishes the new Root Port (RP) and Designated Ports (DPs) and prepares them to forward traffic safely.
 
-### STP Topology Diagram
-### Diagram Explanation
+* **Listening State:** The ports start sending and receiving BPDUs to negotiate their new roles (RP or DP). The port stays here for the **Forward Delay Timer** (default **15 seconds**).
+* **Learning State:** After the first 15 seconds, the port moves to the **Learning** state. It starts populating its MAC address table to ensure efficient forwarding when active. The port stays here for a second **Forward Delay Timer** (default **15 seconds**).
 
-#### STP Decision Process
-#### Resulting Tree Structure
+---
 
-## Best Practices and Modern Variants
+**Activation and Stability**
 
-### Rapid Spanning Tree Protocol (RSTP)
-### Multiple Spanning Tree Protocol (MSTP)
-### Configuration Tips
+* **Forwarding State:** After the second 15-second delay (a total of 30 seconds spent in Listening and Learning), the new Root Port or Designated Port transitions to the **Forwarding** state, and the network topology has successfully converged.
 
-## Conclusion
+| Phase | State | Timer Value | Key Action |
+| :--- | :--- | :--- | :--- |
+| **Detection** | Blocking | Max Age (20s) | Detect failure of the current active path. |
+| **Delay 1** | Listening | Forward Delay (15s) | Elect new port roles (RP/DP). |
+| **Delay 2** | Learning | Forward Delay (15s) | Populate MAC address table. |
+| **Activation** | Forwarding | 0s | Begin passing traffic on the new path. |
+
+> **Note:** Modern protocols like **Rapid STP (RSTP)** eliminate the 50-second delay by using a synchronization and handshake mechanism, allowing for near-instantaneous convergence (often under 1 second).
+
+---
+
+## References
