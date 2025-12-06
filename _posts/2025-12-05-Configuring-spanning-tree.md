@@ -7,6 +7,10 @@ author:
 tag: [blog,ccna,ccnp]
 ---
 
+```bash
+Status: In progress
+```
+
 # Configuring Spanning Tree Protocol
  
 Spanning Tree Protcol is enabled by default on most new Cisco switches. But we can manuplate the role of each switch based of our network design.
