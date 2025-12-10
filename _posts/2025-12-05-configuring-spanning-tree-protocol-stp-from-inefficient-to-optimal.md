@@ -22,7 +22,7 @@ For example, the *slowest* switch could be elected as the root bridge. If heavy 
 
 This is a three tier campus network with reduandancy links on all switches expect one. Imagine if all switches are left at their default states, only one root bridge is elected, with no clear choice for backup. In the event of root bridge fails, the process of root election will happen again, however the next root bridge may not the ideal switch or at ideal location selected.
 
-![Campus Network with STP Converged](../assets/img/campus-network-with-inefficent-stp-light.png)
+![Campus Network with STP Converged](../assets/img/campus-network-with-inefficent-stp-dark.png)
 
 This campus network design and switch placement based of their Bridge ID is designed purposely to create a inefficent spanning-tree strcutre to show how improper spanning-tree archtecture can cause issues for traffic.
 
