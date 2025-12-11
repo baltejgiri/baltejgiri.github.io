@@ -11,8 +11,9 @@ tag: [blog,ccna,ccnp]
 
 The root bridge election is based on the two ideas;
 
-    1. One switch that is chosen as common reference point, and all other switches choose ports that have the best-cost path to root.
-    2. The root bridge become a central hub that interconnects other legs of the network. Thereforce, the root bridge can handle heavy switching load in its central location.
+1. One switch that is chosen as common reference point, and all other switches choose ports that have the best-cost path to root.
+
+2. The root bridge become a central hub that interconnects other legs of the network. Thereforce, the root bridge can handle heavy switching load in its central location.
 
 If the root bridge election is left to its default state, several things can occur to result in a poor choice.
 
@@ -30,8 +31,9 @@ Network diagram shows Access layer **Switch A1** becomes root bridge based of lo
 
 Inefficent Root Bridge placement can cause many issues but few that stands out the most.
 
-    - Network traffic might have to take longer, less direct paths to reach the root bridge. This can slow things down and make the network less efficient.
-    - Root bridge becomes slow and overloaded can cause slow spanning-tree convergence means a longer outage time.
+ - Network traffic might have to take longer, less direct paths to reach the root bridge. This can slow things down and make the network less efficient.
+
+- Root bridge becomes slow and overloaded can cause slow spanning-tree convergence means a longer outage time.
 
 ## Best Practice to Select Root Bridge
 
@@ -43,8 +45,9 @@ As a common practice, the primary root bridge and secondary root bridge should b
 
 A Catalyst switch can be configured to use one of the following formats for its STP bridge ID:
 
-    - Traditional 802.1D bridge priority value (16 bits), followed by the unique switch MAC address for the VLAN
-    - The 802.1t extended system ID (4-bit priority multiplier, plus a 12-bit VLAN ID), forllowing by a nonunique switch MAC address for the VLAN.
+ - Traditional 802.1D bridge priority value (16 bits), followed by the unique switch MAC address for the VLAN.
+
+ - The 802.1t extended system ID (4-bit priority multiplier, plus a 12-bit VLAN ID), forllowing by a nonunique switch MAC address for the VLAN.
 
 To see if switch already using the 802.1t extended system ID method, it can be varified from switches running-configuration:
 
@@ -72,4 +75,8 @@ The commad to manually maniuplate the bridge priority as follows?
 ```bash
 Switch(config) # spanning-tree vlan *vlan-list* priority *bridge-priority*
 ```
+By default *bridge-priority* value defaults to 32,768, however it can be statically assign from 0 to 65,535.
+
+If switch has STP extended system ID is enabled, the default bridge-priority is 32,768 plus the VLAN number. In that case, the value can range from 0 to 61,440, but only as mutliples of 4096. A lower bridge priority is preferable.
+
 
