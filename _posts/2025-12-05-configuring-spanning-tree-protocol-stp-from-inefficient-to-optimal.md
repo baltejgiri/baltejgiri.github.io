@@ -144,7 +144,7 @@ Interface           Role Sts Cost      Prio.Nbr Type
 Gi1/3               Desg FWD 4         128.8    P2p 
 ```
 
-### STP Root Bridge Auto-Configuration
+### Auto-Configuration of STP Root Bridge
 
 Using the root command makes the switch automatically choose a good STP priority, based on what it thinks other switches are using. You don’t have to set the exact number yourself.
 

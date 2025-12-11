@@ -23,18 +23,28 @@ Radia Perlman published an article [An algorithm for distributed computation of 
 
 ## Why We Need Spanning Tree Protocol?
 
-To enhance network resilience, LANs are often designed with redundant links between switches i.e. access layer to distribution layer and core layers. However, these redundant paths can create loops, leading to broadcast storms and degraded performance. STP dynamically identifies and disables redundant paths, allowing only one active path at a time. If the active path fails, STP reactivates a backup path, maintaining connectivity and fault tolerance.
+In simple terms, one link is good but two links are better - that's just an enough justficication to have STP.
+
+**TTL** (Time to live), have you heard about it? Well, ethernet frames have not. Ethernet Frames does not use ttl value in ethernet frames as compare to IP Packet. In an IP Packet, TTL prevents packets to circulate indefinatily due to routing loops. Every time a router process an IP packet it reduce the TTL value by 1, means packet can only roam arround until TTL value reaches to 0.
+
+Whereas ethernet frames does not use the TTL mechanisum, thus a need of Spanning Tree arise.
+
+- LANs are often designed with redundant links between switches i.e. access layer to distribution layer to enhance network resilience. However, these redundant paths can create loops, leading to broadcast storms and degraded performance. 
+
+- STP dynamically identifies and disables redundant paths, allowing only one active path at a time. If the active path fails, STP reactivates a backup path, maintaining connectivity and fault tolerance.
 
 ---
 
 ## What Spanning Three Does?
 
-STP computes a tree structure that spans all switches in a subnet or network. Redundant paths are placed in Blocking or Standby state to prevent frame forwarding. The switched network is then in a loop-free condition. However, if forwarding port fails or becomes disconnected, the spanning-tree algorithm recomputes the spanning-tree topology so that the appropriate blocked links can be reactivated.
+- STP computes a tree structure that spans all switches in a subnet or network. 
+- Redundant paths are placed in Blocking or Standby state to prevent frame forwarding. 
+- If forwarding port fails or becomes disconnected, the spanning-tree algorithm recomputes the spanning-tree topology so that the appropriate blocked links can be reactivated.
 
-STP prevents three common problems in EthernetL LANs:
+### Common problems that STP prevents in a local area network:
 
 1. **Broadcast storm:**
-        - If you remember LAN switch - a broadcast frame, multicast frame, or unknown unicast frame loops around a LAN indefinitely since network has a loop.
+        - If you remember LAN switch - a broadcast frame, multicast frame, or unknown unicast frame loops around a LAN indefinitely becouse of a loop in network.
 2. **MAC table instability:**
         - Switch puts an entry of learnt MAC address in its table and starts a counter of 300 seconds (by default value) and removes MAC address entry if no other frame arrives from the same source. However, a loop in network floods frames and makes mac address table instable since it can't keep up the with the number of same frames arriving from different source addresses.
 3. **Multiple frame transmission:**
@@ -42,9 +52,14 @@ STP prevents three common problems in EthernetL LANs:
 
 ---
 
-## How Spanning Tree Protocol Works
+## How Spanning-Tree Protocol Works?
 
-STP/RSTP algorithm creates a spanning three of interfaces that forward frames. The tree structure of forwarding interfaces creates a single path to and from each ethernet link. STP/RSTP process called _spanning-tree algorithm_ (STA), selects the interfaces that should be in forwarding or blocking state.
+STP/RSTP algorithm does create a spanning tree that ensures there is only one active path between switches for sending frames.
+
+- Selecting which switch ports should forward frames (active path).
+- Blocking the redundant paths to prevent loops.
+
+In short, STP/RSTP ensures that data travels along one loop-free path, while other paths are blocked but can be activated if the primary path fails.
 
 STP/RSTP has three mechanism whether to put an interface in a forwarding state:
 
