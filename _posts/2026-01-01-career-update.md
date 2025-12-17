@@ -3,7 +3,7 @@ layout: post
 title: Career Update
 date: 2026-01-01
 author: 
-#categories: [Career Update]
+categories: [General]
 tag: [blog]
 ---
 
@@ -21,5 +21,5 @@ This role has played a vital role for me to grasp a good overall understanding o
  
 I am glad to day I am now moving into Wireless Network role where I will be working with Cisco technologies to wireless survey's, design access point placement utilizing wireless survey's, administrating Wireless LAN Controllers and much more. This is an existed role as well a challenging role too. I am ready to take on a big step forward in my career where I will be focusing on a particular area of interest.
  
-I would like to thanks my direct manager ***Mike Hines*** in the organization for supporting my decision and helping me to grow in my career. A special thanks to [Dave A](https://www.linkedin.com/in/david-a-14643a125/) who has been helping with learning the networking technologies.
+I would like to thanks management of networks team in the organization for supporting my decision and helping me to grow in my career. A special thanks to [Dave A](https://www.linkedin.com/in/david-a-14643a125/) who has been helping with learning the networking technologies.
 
