@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Configuring Spanning Tree Protocol (STP): From Inefficient to Optimal"
-date: 2026-01-28
+date: 2026-05-15
 author: 
 categories: [Networking]
 tag: [blog,ccna,ccnp]
