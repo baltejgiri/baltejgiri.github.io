@@ -218,17 +218,163 @@ A reference clock is usually a very accurate time device like an atomic clock or
 
 ## NTP Hierarchy
 
+![NTP Hierarchy](/assets/img/ntp-hirarchy.png)
+
+- Reference clocks are **stratum 0**. 
+- **Stratum 1** NTP servers get their time from stratum reference clocks. 
+- **Stratum 2** NTP servers get their time from stratum 1 NTP servers.
+- **Stratum 3** NTP servers get their time from stratum 2 NTP servers.
+- **Stratum 15** is the maximum. Anything above that is considered unreliable.
+- Devices can also peer with devices at the same stratum to provide more accurate time. This is called 'symmetric active' mode. Cisco devices can operate in three NTP modes:
+    - Server mode
+    - Client mode
+    - Symmetric active mode
+- An NTP client can sync to multiple NTP servers.
+
+NTP servers which get their time directly from reference clocks are are also called **primary servers**. Whereas NTP servers which get their time from other NTP servers are called **secondary servers**. They operate in server and client mode at the same time.
 
 ## NTP Configuration
 
+NTP configuration on a network device is done from the global privilege mode. Keyword ```prefer``` was used to prefer first ntp server address on router.
 
-## NTP Server Mode
+```bash
+C:\Users>nslookup time.google.com
+Server: dns.google
+Address: 8.8.8.8
+Non-authoritative answer:
+Name: time.google.com
+Addresses: 2001:4860:4806::
+2001:4860:4806:c::
+2001:4860:4806:8::
+2001:4860:4806:4::
+216.239.35.12
+216.239.35.8
+216.239.35.4
+216.239.35.0
+!
+rtr01(config)#ntp ?
+  access-group        Control NTP access
+  allow               Allow processing of packets
+  authenticate        Authenticate time sources
+  authentication-key  Authentication key for trusted time sources
+  broadcastdelay      Estimated round-trip delay
+  clock-period        Length of hardware clock tick
+  leap-handle         To handle the leap seconds
+  logging             Enable NTP message logging
+  master              Act as NTP master clock
+  max-associations    Set maximum number of associations
+  maxdistance         Maximum Distance for synchronization
+  mindistance         Minimum distance to consider for clockhop
+  orphan              Threshold Stratum for orphan mode
+  panic               Reject time updates > panic threshold (default 1000Sec)
+  passive             NTP passive mode
+  peer                Configure NTP peer
+  server              Configure NTP server
+  source              Configure interface for source address
+  trusted-key         Key numbers for trusted time sources
+  update-calendar     Periodically update calendar with NTP time
+
+rtr01(config)#ntp server ?
+  A.B.C.D     IP address of peer
+  WORD        Hostname of peer
+  X:X:X:X::X  IPv6 address of peer
+  ip          Use IP for DNS resolution
+  ipv6        Use IPv6 for DNS resolution
+  vrf         VPN Routing/Forwarding Information
+
+rtr01(config)#ntp server 
+rtr01(config)#ntp server 216.239.35.0 prefer
+rtr01(config)#ntp server 216.239.35.4
+rtr01(config)#ntp server 216.239.35.8
+rtr01(config)#ntp server 216.239.35.12
+```
+
+### NTP Verification
+
+The following NTP verification table shows the address, reference clock, st column refers to stratum
+
+```bash
+rtr01#show ntp associations 
+
+  address         ref clock       st   when   poll reach  delay  offset   disp
++~216.239.35.8    .GOOG.           1     40     64     7 29.000 1405.39  1.686
+*~216.239.35.0    .GOOG.           1     23     64     7 31.000 1406.85  1.704
++~216.239.35.4    .GOOG.           1     45     64     7 29.000 1406.48  1.682
+-~216.239.35.12   .GOOG.           1     36     64     7 33.000 1408.07  1.693
+ * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured
+```
+Asterisks * confirms the address is systems preferred. Plus + confirms reset of the addresses are the candidates if preferred NTP server does not respond. Tilde ~ shows the addresses are configured on router. Hyphen - sign refers to a time measurement from a specific server or packet that is statistically rejected because it deviates significantly from the consensus time provided by other sources. The last sign x identifies as unreliable or inaccurate by the NTP client's statistical algorithms.
+
+```bash
+rtr01#show ntp status
+Clock is synchronized, stratum 2, reference is 216.239.35.12  
+nominal freq is 250.0000 Hz, actual freq is 249.8750 Hz, precision is 2**10
+ntp uptime is 97700 (1/100 of seconds), resolution is 4016
+reference time is ED490189.D3B66A5E (21:05:13.827 UTC Tue Feb 24 2026)
+clock offset is 1405.8840 msec, root delay is 28.00 msec
+root dispersion is 9344.94 msec, peer dispersion is 7937.98 msec
+loopfilter state is 'SPIK' (Spike), drift is 0.000499999 s/s
+system poll interval is 64, last update was 2 sec ago.
+```
+
+### Configuring NTP Server Mode
+
+```bash
+rtr01(config)#ntp master
+!
+sw01(config)#ntp server 192.168.0.1
+
+```
+
+### Configuring NTP Symmetric active mode
+
+```bash
+R2(config)#ntp peer 10.0.23.2
+R2(config)#do show ntp associations
+address ref clock st when poll reach delay offset disp
+*~10.0.12.1 127.127.1.1 8 60 64 17 24.040 206.682 0.987
+~10.0.23.2 10.0.12.1 9 33 64 0 0.000 0.000 15937.
+* sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured
+```
+
+```bash
+R3(config)#ntp peer 10.0.23.1
+R3(config)#do show ntp associations
+address ref clock st when poll reach delay offset disp
+*~10.0.12.1 127.127.1.1 8 11 64 37 12.605 -7.406 63.575
+~10.0.23.1 10.0.12.1 9 1 64 0 0.000 0.000 15937.
+* sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured
+```
+
+### NTP Authentication
+
+NTP authentication can be configured, although it is optional. It allows NTP clients to ensure they only sync to the intended servers. To configure NTP authentication.
+
+```bash
+ntp authenticate
+ntp authentication-key key-number md5 key
+ntp trusted-key key-number
+ntp server ip-address key key-number
+```
+
+## Quick review of NTP Commands
+
+```bash
+!Basic Configuration Commands
+R1(config)# ntp server ip-address [prefer]
+R1(config)# ntp peer ip-address
+R1(config)# ntp update-calendar
+R1(config)# ntp master [stratum]
+R1(config)# ntp source interface
+!Basic Show Commands
+R1# show ntp associations
+R1# show ntp status
+!Basic Authentication Commands
+R1(config)# ntp authenticate
+R1(config)# ntp authentication-key key-number md5 key
+R1(config)# ntp trusted-key key-number
+R1(config)# ntp server ip-address key key-number
+R1(config)# ntp peer ip-address key key-number
+```
 
 
-## NTP Symmetric active mode
-
-
-## NTP Authentication
-
-
-## NTP Commands
