@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Untrusted versus Trusted Ports"
-date: 2026-04-15
+date: 2026-04-19
 author: 
 categories: [Networking,]
 tag: [blog,ccna,ccnp]
