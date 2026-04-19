@@ -58,7 +58,6 @@ Other fields in the DHCP message format are listed below in the chart, each fiel
 DHCP is a great tool to automate IP address assignment in your network. It's difficult to imagine an enterprise network without DHCP. As it is considered a valuable tool it can be overlooked if wireless clients suddenly stops working but wireless client will seems like it is connected to Wi-Fi however there is no network. DHCP executions must be reviewed in cases like that. I hope this post give you a good first look at DHCP and made you interested to dive deep into the DHCP.
 
 ## References
-
 Images are not owned, they are simply referred from following sources.
 
 - Wikipedia
