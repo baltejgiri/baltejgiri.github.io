@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Untrusted versus Trusted Ports"
+title: "DHCP Snooping - Trust Versus Untrusted"
 date: 2026-04-19
 author: 
 categories: [Networking,]
@@ -61,7 +61,45 @@ A binding table does sounds like a MAC Address table however they both are diffe
 
 - A MAC Address table only maps MAC Address to VLAN and Physical port whereas a binding table maps the MAC address to IP Address, Lease, Type, VLAN and Interface.
 
->>To be continued.
+## DHCP Snooping Configuration
+
+DHCP snooping is enabled on switches, the first command
+
+```bash
+SW1(config)#ip dhcp snooping
+SW1(config)#ip dhcp snooping vlan <vlan-id>
+SW(config)#interface range gig0/0-1
+SW(config-if)#ip dhcp snooping trust
+SW(config-if)#exit
+SW(config)#no ip dhcp snooping information option
+```
+- The first command ```ip dhcp snooping``` does not enable anything for DHCP snooping however it tells the switches CPU that carved-out some memory to create the DHCP snooping binding table we are going to need.
+
+- The second command ```ip dhcp snooping vlan <vlan-id>``` basically enable the DHCP snooping on the VLAN of your choice.
+
+At this point we have turned all interfaces on switch into **untrusted ports**, even the dhcp server's messages will be dropped due to option 82 being inserted into DHCP packets. To allow dhcp server to send messages into the network we need to manually **trust** switch interfaces that are either connected to DHCP server or an interface to router that connects to a different network as well as disable option 82.
+
+> Note Option 82 means there is no relay agent in the path, the DHCP server must discard the packets.
+
+- The third command basically takes us into the interface mode of gig0/0 and gig0/1.
+- The forth command is used to trust the interfaces for DHCP messages ```OFFER``` and ```ACK``` received from server.
+- The fifth command takes us from interface config mode to global config mode.
+- The sixth command basically disables the option 82 so DHCP servers can receive packets.
+
+Clients should receive an IP address from DHCP server. Some debug or packet capture can be used to understand the flow of packet while following each commands mentioned above.
+
+### DHCP Snooping Diagram
+
+![DHCP Snooping Diagram](/baltejgiri.github.io/assets/img/DHCP_snooping_diagram.png)
+
+To receive IP addresses, clients in site Y needs connects to site X. SW1 interface's that either connected to DHCP Server or default gateway needs to be trusted.
+
+
+
+
+
+
+
 
  
 
