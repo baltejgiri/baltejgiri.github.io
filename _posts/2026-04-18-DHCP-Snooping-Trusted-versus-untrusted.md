@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "DHCP Snooping - Trusted Versus Untrusted"
-date: 2026-04-18 
-categories: [Networking,]
-tag: [blog,ccna-vol2]
+date: 2026-04-18
+categories: [Networking,CCNA]
+tag: [blog,ccna-vol2-ch12]
 ---
 
 ## Overview
-Networking protocols provide services to achieve a specific goal as per their design. However, an attacker can take benefit of these protocols to destruct the main functionality of the protocols.
+Networking protocols provide services to achieve a specific goal as per their design. However, an attacker can take benefit of these protocols to destruct the main functionality.
 
 Today's topic is DHCP, we know DHCP provides network addresses to the client's and servers upon a dynamic request. DHCP Server uses DORA process in the sequence of DISCOVER, OFFER, RESPONSE AND ACKNOWLEDGE messages to provide network addresses to clients. Client is referred to any device that needs to learn network addresses dynamically and Server is referred to a DHCP Server which provides the network addresses to clients.
 
@@ -18,21 +18,17 @@ There are two more messages that clients uses - DHCP RELEASE and DHCP DECLINE. T
 
 A Client can also send a DHCP DECLINE message to DHCP server stating it does not need the IP address during a DORA process.
 
-Based of who sends which message in DHCP DORA process basically helps why we configure untrusted and trusted ports.
-
- DHCP messages are broadcasted on a single broadcast domain means anyone connected on the same domain can receive these messages, by default switches has no mechanism to prevents these messages filter on which port they should be received or sent. Thus, we introduce the title of this post **Untrusted versus Trusted** ports often known as **DHCP Snooping**.
+DHCP messages are broadcasted on a single broadcast domain, means anyone connected on the  domain can receive these messages. By default switches has no mechanism filter DHCP messages on which port they should be received or sent, thus we need DHCP Snooping to trust or untrust switch interfaces.
 
 ## DHCP Snooping
 
-DHCP Snooping analyzes incoming messages on the specified subset of ports in a VLAN and may filter DHCP messages using a simple logic either allow or discard the packet based of the switch port configuration. Basically, configuring the switch port to either untrust or trust any DHCP messages are received.
+DHCP Snooping analyzes incoming messages on the specified subset of ports in a VLAN and may filter DHCP messages using a simple logic either allow or discard the packet based of the switch port configuration. Basically, configuring the switch interface to either untrust or trust any DHCP messages are received.
 
 ### Untrusted Port
-
 - DHCP messages received on a untrusted port, normally send by a server will always be discarded. Messages like DHCPOFFER and DHCPACK.
 - DHCP messages received on a untrusted port, sent by a DHCP client, may be filtered if they appear to be the part of an attack. Messages like DHCPDISCOVER and DHCPREQUEST.
 
 ### Trusted Port
-
 - DHCP messages received on a trusted port will be forwarded; trusted ports do not filter (discard) any DHCP messages.
 
 ### Trust ports if
@@ -47,7 +43,6 @@ DHCP Snooping analyzes incoming messages on the specified subset of ports in a V
 - A port connects to a Wireless Access Point, Clients connected via an AP can try to spoof DHCP server responses if switch ports left trusted for APs.
 
 ## DHCP Snooping Binding Table
-
 DHCP Snooping binding table is built dynamically by the switch through a process of "listening in" (snooping) on the 4-step DORA process between a client and a server.
 
 A binding table tracks which (MAC address) is allowed to use which IP address on a specific physical port. Switch creates an entry in the binding table once it sees a successful lease is formed by a client.
@@ -59,8 +54,7 @@ A binding table does sounds like a MAC Address table however they both are diffe
 - A MAC Address table only maps MAC Address to VLAN and Physical port whereas a binding table maps the MAC address to IP Address, Lease, Type, VLAN and Interface.
 
 ## DHCP Snooping Configuration
-
-DHCP snooping is enabled on switches, the first command
+DHCP Snooping is configured using following set of commands, each line of the command is explained to understand what is the expected behavior of commands.
 
 ```bash
 SW1(config)#ip dhcp snooping
@@ -91,6 +85,8 @@ Clients should receive an IP address from DHCP server. Some debug or packet capt
 
 To receive IP addresses, clients in site Y needs connects to site X. SW1 interface's that either connected to DHCP Server or default gateway needs to be trusted.
 
+## Summary
+We learnt DORA process of DHCP then why we need DHCP snooping and how it works on a cisco switch. Understanding commands and how they operate at switch level is a key take away from this post.
 
 
 
