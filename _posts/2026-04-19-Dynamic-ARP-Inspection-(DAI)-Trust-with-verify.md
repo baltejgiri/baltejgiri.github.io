@@ -3,8 +3,8 @@ layout: post
 title: "Dynamic ARP Inspection (DAI) - Trust with Verify"
 date: 2026-04-19
 author: 
-categories: [Networking]
-tag: [blog,ccna,ccnp]
+categories: [Networking,CCNA]
+tag: [blog,ccna-vol2-chap12]
 ---
 
 # Overview

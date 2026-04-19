@@ -42,9 +42,13 @@ Analogy is very much the same as a Client requests the IP address and DHCP serve
 
 > DHCP Server: Server sends a final message **Acknowledgement** confirming IP address is now assigned to you.
 
+### DHCP 4-Way Handshake
+DHCP 4-way handshake is a a DORA process between client and server.
+
 ![4-way handshake](/baltejgiri.github.io/assets/img/dhcp-4-way-handshake.png)
 
 ### DHCP Message Format
+DHCP message format defines fields of a DHCP message. This message format is a good reference point to Wireshark packet capture on DHCP message.
 
 ![DHCP Message Format](/baltejgiri.github.io/assets/img/dhcp_message_format.png)
 
@@ -52,9 +56,14 @@ Analogy is very much the same as a Client requests the IP address and DHCP serve
 
 Other fields in the DHCP message format are listed below in the chart, each field has a small explanation to go over.
 
+### Detailed DHCP Message Format
+
+Each DHCP message field is described with their role. Once again a good reference point with Wireshark packet capture.
+
 ![DHCP Message Format with details](/baltejgiri.github.io/assets/img/DHCP_Message_Format_with_Details.png)
 
 ## Summary
+
 DHCP is a great tool to automate IP address assignment in your network. It's difficult to imagine an enterprise network without DHCP. As it is considered a valuable tool it can be overlooked if wireless clients suddenly stops working but wireless client will seems like it is connected to Wi-Fi however there is no network. DHCP executions must be reviewed in cases like that. I hope this post give you a good first look at DHCP and made you interested to dive deep into the DHCP.
 
 ## References
