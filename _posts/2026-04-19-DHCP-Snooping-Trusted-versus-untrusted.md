@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "DHCP Snooping - Trust Versus Untrusted"
-date: 2026-04-19
-author: 
+title: "DHCP Snooping - Trusted Versus Untrusted"
+date: 2026-04-19 
 categories: [Networking,]
-tag: [blog,ccna,ccnp]
+tag: [blog,ccnavol2]
 ---
 
 ## Overview
@@ -36,9 +35,6 @@ DHCP Snooping analyzes incoming messages on the specified subset of ports in a V
 
 - DHCP messages received on a trusted port will be forwarded; trusted ports do not filter (discard) any DHCP messages.
 
-## When should a switch port be trusted or untrusted?
-
-
 ### Trust ports if
 - A DHCP server connected to switch port, so the DHCPOFFER and DHCPACK messages can be sent.
 - A trunk port (link between switches), so that DHCPOFFER and DHCPACK messages can reach to the destination client.
@@ -46,6 +42,7 @@ DHCP Snooping analyzes incoming messages on the specified subset of ports in a V
 
 ### Untrust ports if
 - A client is desktop, laptop, printer or a VoIP phone since they do not send DHCPOFFER and DHCPACK messages however, a attacker can connect to these ports and attempt to send DHCPOFFER and DHCPACK.
+
 - Switch ports that are open in public area like conference rooms and physical access to wall port is easily available.
 - A port connects to a Wireless Access Point, Clients connected via an AP can try to spoof DHCP server responses if switch ports left trusted for APs.
 
