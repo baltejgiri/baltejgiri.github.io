@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "DHCP in Operation"
-date: 2026-04-18
-author: 
-categories: [Networking]
-tag: [blog,ccna,ccnp]
+date: 2026-04-17
+categories: [Networking,CCNA]
+tag: [blog,ccna-vol2-ch12]
 ---
 
 # Overview
