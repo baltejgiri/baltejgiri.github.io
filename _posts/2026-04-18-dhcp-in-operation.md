@@ -42,17 +42,17 @@ Analogy is very much the same as a Client requests the IP address and DHCP serve
 
 > DHCP Server: Server sends a final message **Acknowledgement** confirming IP address is now assigned to you.
 
-![4-way handshake](/baltejgiri.github.io/assets/img/dhcp-4-way-handshake.png)
+![4-way handshake](baltejgiri/baltejgiri.github.io/assets/img/dhcp-4-way-handshake.png)
 
 ### DHCP Message Format
 
-![DHCP Message Format](/baltejgiri.github.io/assets/img/dhcp_message_format.png)
+![DHCP Message Format](baltejgiri/baltejgiri.github.io/assets/img/dhcp_message_format.png)
 
 - **Operation Code**: Basically it tells which direction the message is going. For example, OP Code 1 referred to client message which can be either _Discover_ or _Request_. OP Code 2 is referred to server message i.e. _Offer_, _Acknowledge_ or _Negative Acknowledgement_. We have not touched on NAK yet but we will see it in practice later on.
 
 Other fields in the DHCP message format are listed below in the chart, each field has a small explanation to go over.
 
-![DHCP Message Format with details](/baltejgiri.github.io/assets/img/DHCP_Message_Format_with_Details.png)
+![DHCP Message Format with details](baltejgiri/baltejgiri.github.io/assets/img/DHCP_Message_Format_with_Details.png)
 
 ## Summary
 DHCP is a great tool to automate IP address assignment in your network. It's difficult to imagine an enterprise network without DHCP. As it is considered a valuable tool it can be overlooked if wireless clients suddenly stops working but wireless client will seems like it is connected to Wi-Fi however there is no network. DHCP executions must be reviewed in cases like that. I hope this post give you a good first look at DHCP and made you interested to dive deep into the DHCP.
