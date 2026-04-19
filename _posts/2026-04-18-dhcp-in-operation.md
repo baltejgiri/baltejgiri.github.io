@@ -59,7 +59,7 @@ DHCP is a great tool to automate IP address assignment in your network. It's dif
 
 ## References
 
-Images are not own, they are simply referred from following sources.
+Images are not owned, they are simply referred from following sources.
 
 - Wikipedia
 - http://www.tcpipguide.com/
