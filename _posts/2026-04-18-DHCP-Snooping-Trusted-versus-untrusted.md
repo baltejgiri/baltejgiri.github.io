@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "DHCP Snooping - Trusted Versus Untrusted"
-date: 2026-04-19 
+date: 2026-04-18 
 categories: [Networking,]
-tag: [blog,ccnavol2]
+tag: [blog,ccna-vol2]
 ---
 
 ## Overview
@@ -87,7 +87,7 @@ Clients should receive an IP address from DHCP server. Some debug or packet capt
 
 ### DHCP Snooping Diagram
 
-![DHCP Snooping Diagram](baltejgiri/baltejgiri.github.io/assets/img/DHCP_snooping_diagram.png) 
+![DHCP Snooping Diagram](/baltejgiri.github.io/assets/img/DHCP_snooping_diagram.png) 
 
 To receive IP addresses, clients in site Y needs connects to site X. SW1 interface's that either connected to DHCP Server or default gateway needs to be trusted.
 
