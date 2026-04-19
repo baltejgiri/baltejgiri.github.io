@@ -2,9 +2,8 @@
 layout: post
 title: "Breaking the Loop: Understanding Spanning Tree Protocol"
 date: 2025-11-10
-author: 
-#categories: [Networking]
-tag: [blog,ccna,ccnp]
+categories: [Networking,CCNA]
+tag: [blog,ccna-vol1-ch9]
 ---
 
 # Breaking the Loop: Understanding Spanning Tree Protocol
@@ -19,7 +18,7 @@ tag: [blog,ccna,ccnp]
 
 Radia Perlman published an article [An algorithm for distributed computation of a spanning tree in an extended LAN by Radia Perlman](https://dl.acm.org/doi/pdf/10.1145/318951.319004) in 1985. In the article, Radia Perlman beautifully described the STP in an artistic way.
 
-![STP Poetry](/assets/img/spanning_tree_poetry.png)
+![STP Poetry](/baltejgiri.github.io/assets/img/spanning_tree_poetry.png)
 
 ## Why We Need Spanning Tree Protocol?
 

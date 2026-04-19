@@ -3,8 +3,8 @@ layout: post
 title: "Domain Name System - It's a DNS issue"
 date: 2026-02-25
 author: 
-categories: [Networking]
-tag: [blog,ccna,ccnp]
+categories: [Networking,CCNA]
+tag: [blog,ccna]
 ---
 
 # The Purpose of DNS

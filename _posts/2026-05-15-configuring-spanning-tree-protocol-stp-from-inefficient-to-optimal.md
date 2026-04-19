@@ -2,9 +2,8 @@
 layout: post
 title: "Configuring Spanning Tree Protocol (STP): From Inefficient to Optimal"
 date: 2026-05-15
-author: 
-categories: [Networking]
-tag: [blog,ccna,ccnp]
+categories: [Networking,CCNA]
+tag: [blog,ccna-vol1-ch12]
 ---
 
 ## Root Bridge Placement
@@ -23,7 +22,7 @@ For example, the *slowest* switch could be elected as the root bridge. If heavy 
 
 This is a three tier campus network with reduandancy links on all switches expect one. Imagine if all switches are left at their default states, only one root bridge is elected, with no clear choice for backup. In the event of root bridge fails, the process of root election will happen again, however the next root bridge may not the ideal switch or at ideal location selected.
 
-![Campus Network with STP Converged](../assets/img/campus-network-with-inefficent-stp-dark.png)
+![Campus Network with STP Converged](/baltejgiri.github.io/assets/img/campus-network-with-inefficent-stp-dark.png)
 
 This campus network design and switch placement based of their Bridge ID is designed purposely to create a inefficent spanning-tree strcutre to show how improper spanning-tree archtecture can cause issues for traffic.
 
@@ -245,7 +244,7 @@ Interface           Role Sts Cost      Prio.Nbr Type
 Gi1/2               Desg FWD 4         128.7    P2p
 ```
 
-Here is what means by syntex "primary, secondary and diameter (haven't used in this lab yet)
+Here is what means by syntax "primary, secondary and diameter (haven't used in this lab yet)
 
 - Primary = makes this switch the preferred root
 - Secondary = makes it the backup root

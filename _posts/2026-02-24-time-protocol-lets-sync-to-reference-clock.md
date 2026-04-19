@@ -3,7 +3,7 @@ layout: post
 title: "Time Protocol - Let's Sync it to Reference Clock"
 date: 2026-02-24
 author: 
-categories: [Networking]
+categories: [Networking,CCNA]
 tag: [blog,ccna,ccnp]
 ---
 

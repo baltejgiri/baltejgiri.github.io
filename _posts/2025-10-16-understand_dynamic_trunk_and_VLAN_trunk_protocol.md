@@ -2,9 +2,8 @@
 layout: post
 title: Understand Dynamic Trunk (DTP) and VLAN Trunk Protocol (VTP)
 date: 2025-10-16
-author: 
-#categories: [Networking]
-tag: [blog,ccna,ccnp]
+categories: [Networking,CCNA]
+tag: [blog,ccna-vol1-ch8]
 ---
 
 ## Understand Dynamic Trunking Protocol (DTP)

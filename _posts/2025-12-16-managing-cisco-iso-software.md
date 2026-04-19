@@ -3,7 +3,7 @@ layout: post
 title: Managing Cisco ISO Software
 date: 16-12-2025
 author:
-categories: [Networking]
+categories: [Networking,CCNA]
 tag: [blog, ccna]
 ---
 
