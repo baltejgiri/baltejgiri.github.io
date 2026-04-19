@@ -79,7 +79,7 @@ SW(config)#no ip dhcp snooping information option
 
 At this point we have turned all interfaces on switch into **untrusted ports**, even the dhcp server's messages will be dropped due to option 82 being inserted into DHCP packets. To allow dhcp server to send messages into the network we need to manually **trust** switch interfaces that are either connected to DHCP server or an interface to router that connects to a different network as well as disable option 82.
 
-> Note Option 82 means there is no relay agent in the path, the DHCP server must discard the packets.
+> Note: Option 82 means there is no relay agent in the path, the DHCP server must discard the packets.
 
 - The third command basically takes us into the interface mode of gig0/0 and gig0/1.
 - The forth command is used to trust the interfaces for DHCP messages ```OFFER``` and ```ACK``` received from server.
