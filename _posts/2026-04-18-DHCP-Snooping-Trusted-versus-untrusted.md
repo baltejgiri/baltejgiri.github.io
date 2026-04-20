@@ -59,10 +59,10 @@ DHCP Snooping is configured using following set of commands, each line of the co
 ```bash
 SW1(config)#ip dhcp snooping
 SW1(config)#ip dhcp snooping vlan <vlan-id>
-SW(config)#interface range gig0/0-1
-SW(config-if)#ip dhcp snooping trust
-SW(config-if)#exit
-SW(config)#no ip dhcp snooping information option
+SW1(config)#interface range gig0/0-1
+SW1(config-if)#ip dhcp snooping trust
+SW1(config-if)#exit
+SW1(config)#no ip dhcp snooping information option
 ```
 - The first command ```ip dhcp snooping``` does not enable anything for DHCP snooping however it tells the switches CPU that carved-out some memory to create the DHCP snooping binding table we are going to need.
 
