@@ -15,12 +15,12 @@ A Local Area Network in computer networking consists computers, printers, switch
 
 ### Broadcast Domain
 
-![Single Broadcast Domain](/assets/img/broadcast_domain.png)
+![Single Broadcast Domain](/baltejgiri.github.io/assets/img/broadcast_domain.png)
 > Image showing single broadcast domain.
 
 A broadcast domain consist of group of network devices, when one network device sends a broadcast frame, all other devices get a copy of the same frame. To separate devices in two or more broadcast domains, VLANs are required.
 
-![Two Broadcast Domains](/assets/img/two_broadcast_domains.png)
+![Two Broadcast Domains](/baltejgiri.github.io/assets/img/two_broadcast_domains.png)
 > Image showing two broadcast domain.
 
 ### VLANs 
@@ -39,7 +39,7 @@ A Virtual Local Area Network is a mechanism to segment one broadcast domain into
 
 Trunk carries traffic of multiple VLANs between multiple network switches. Trunk uses the IEEE 802.1Q tag to define each frame to its own VLAN.
 
-![Trunk](/assets/img/Trunk_link_between_two_switches.png)
+![Trunk](/baltejgiri.github.io/assets/img/Trunk_link_between_two_switches.png)
 > Image showing two switches connected via a trunk link.
     
 ##### How does ethernet frame travels from PC1 to PC2 through a trunk port?

@@ -14,7 +14,7 @@ Following lab and output of switch’s CLI (command line interface) shows two mu
 
 A simulation of Cisco Catalyst 3650, 24 port switch. It runs on “CAT3K_CAA-UNIVERSALK9” image using software version 16.3.2
 
-![Packet Tracer C3650 Switch Lab ](/assets/2025-08-03-limitations-of-simulated-and-emulated-labs_3650_switch_lab.png)
+![Packet Tracer C3650 Switch Lab ](/baltejgiri.github.io/assets/2025-08-03-limitations-of-simulated-and-emulated-labs_3650_switch_lab.png)
 
 ```bash
 3650-SW-1#show int gig1/0/1

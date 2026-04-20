@@ -7,7 +7,7 @@ categories: [Networking]
 tag: [blog, ccna]
 ---
 
-![Password Security](/assets/2025-06-22_secured_cisco_switch.png)
+![Password Security](/baltejgiri.github.io/assets/2025-06-22_secured_cisco_switch.png)
 
 ## Cisco Switch Password Security Configuration
 

@@ -19,7 +19,7 @@ Routing is the process of selecting and defining paths for data to travel from o
 
  The following diagram helps to understand the hierarchical view of dynamic routing protocol.
 
-![Hierarchical view of dynamic routing protocol](/assets/2025-02-02-hierarchical_view_of_routing_protocol.png)
+![Hierarchical view of dynamic routing protocol](/baltejgiri.github.io/assets/2025-02-02-hierarchical_view_of_routing_protocol.png)
 
 ## Classifying Routing Protocols
 Routing protocols can be classified into different groups according to their characteristics.
@@ -50,7 +50,7 @@ OSPF offers several key advantages:
 ## OSPF Route Design
 In the following design, five Cisco routers, two OSPF area's are used in this lab to demonstrate the simple OSPF configuration.
 
-![OSPF Route Configuration Design](/assets/2025-02-02-OSPF_lab_design.png)
+![OSPF Route Configuration Design](/baltejgiri.github.io/assets/2025-02-02-OSPF_lab_design.png)
 
 ## OSPF Route Configuration
 ### Router 1
