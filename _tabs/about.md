@@ -4,48 +4,54 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-Hi there! I’m Baltej Giri, and welcome to my corner of the internet. I am a Computer Networking Professional with six plus years of experience in Information Technology. I am passionate about creating network designs, write technical articles, and master networking protocols. I am a lifelong learner and like to stay connected with like minded people.
+Hi there! I'm Baltej Giri and I welcome you to my corner of the Internet. I consider myself a Network Operator who administrate, manage and troubleshoot both wired and wireless network. It's been close to 5 years since I have stepped into the networking field and ever since then I am in love with networks. Networking is so fascinating to me thinking how packets are send from one part of the world to another. If someone non-technical person asks me what do you do for living? My answer to them I make sure you can talk to your friend, parent, children or anyone across the world over a digital communication and the conversations goes on and on from there.
 
-After six years of industry experience, I decided to start this blog to share my journey with you. Whether you're looking for guides with labs on Network protocols, or just want to reference on a particular network protocols in networking, you’ll find it here.
+I started to write on this blog so I document what I learn while understanding the networking protocols, if you're someone like me who not only wants to know what is a protocol but needs to understand how protocol work then you clicked on the right link.
 
-This blog is for anyone, whether you're just starting out or looking to deepen your knowledge about Network Engineering. I’m committed to providing step-by-step practical guides on network protocol. My goal is to help you use this blogpost as a guide while you’re mastering the networking topics.
+While I'm not at the terminal, I'm out hiking, biking, or travelling somewhere new. Feel free to connect with me on LinkedIn - I'd love to connect.
 
-When I’m not blogging, I love to go on hikes, biking and travel. Feel free to leave a comment or share your thoughts with me—I’d love to connect!
+---
 
-## Skills
+## What I work with
 
-- Computer Networking
-- Cloud Networking
-- Web Development
-- Problem-solving
-- Technical Documentation
+**Protocols & Technologies:** TCP/IP · IPv4 · OSPF · VLANs (802.1Q) · STP/RSTP/MSTP · QoS · ACLs · SD-WAN · VPNs · DHCP · DNS · SNMP
 
-## Roadmap
+**Platforms & Tools:** Cisco IOS · Cisco Meraki · Cisco Catalyst Center (DNAC) · HPE Aruba · Palo Alto · SolarWinds · NetScout · Wireshark · Tcpdump · Linux CLI
 
-I am planned to learn Github, Technical Writing, Network Administration tools: Switching, Routing, and Programming language. The ultimate long term goal is to master each of these topics.
+**Lab environments:** Cisco Modeling Labs (CML)
 
+**Automation:** Python · REST APIs · Network Programmability
 
-### Short-term goals
-Being proficient in following skills and tools.
-- Github
-- Technical Documentation
-- Network Administrator
-- Network Design
-
-### Mid-term goals
-
-The plan is to have a good understanding of **Python**. Python is a versatile programming language. The network automation is done using Python, it helps to automate repetitive tasks like: Deploying multiple switches, updating policies and much more.
-
-### Long-term goals
-The short and mid-term goals are the objectives of long-term goals. The long-term goals are projected to be completed in 2-3 year of time frame. An additional aspect of working in Networking field is to adept with new technologies. ChatGPT is an perfect example of it. There will be some times when i will have to learn some additional skills based of the requirements of my professional career. The ultimate goal is to stay focused and continue learn.
-
-- Mastering network protocols
-- Network design
-- Python as programming language
+---
 
 ## Certifications
-IT certifications are great way to prove the skills that an individual has in the field. However, getting an IT certification itself does not help. An IT certification can help to get a job interview or fullfil a requirement on on a job description but what matters on the actual job is experience and deep understanding of protocols.
 
-IT certs can be used to learn the skills, they have a good curriculum to follow but while pursuing a certification, many focus on just getting a certification by all means and often it becomes a chasing game.
+I treat certifications as a structured learning framework — the goal is deep understanding of every protocol, not just a passing score. Lab time in CML  is a core part of how I study.
 
-Instead solely focusing on getting a certification, in my opinion it is better to use the certification curriculum and master the each concepts. Understand the fundamentals of protocols and technologies. It is important to take time and have a understanding of skills tested in the cert which will pay-off twice, first to excel at job and second to obtain a official cert.
+I currently hold CCNA 200-301 certification, it helped me to build a solid networking foundation. I am now focusing on network programmability by following CCNA Automation (previously DevNet Associate) certification guide. This exam covers fundamental level of Software Development Lifecycle Framework to Bash, Git, Python, and how to use APIs to interact with Network tools like Cisco Catalyst Center, Meraki Dashboard, Cisco IOS XE, Cisco ACI and Collaboration. 
+
+---
+
+## Goals
+
+### Now
+- DevNet Associate — Python, APIs, YANG/NETCONF
+- Network programmability fundamentals
+- REST API & Cisco DNA Center automation
+
+### Next
+- Begin CCNP Enterprise track
+- Advanced routing — BGP deep dive, route policies
+- Git & CI/CD for network config management
+- Expand lab topology library
+
+### Long term
+- Master enterprise network design
+- Cloud networking (AWS / Azure)
+- Full CCNP Enterprise and CCNP Automation
+
+---
+
+## Outside the terminal
+
+When I'm not studying or writing, you'll find me hiking, biking, or travelling somewhere new.
