@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Career Update
-date: 2027-01-01
+title: "What helped: Passing CCNA Certification"
+date: 2026-05-01
 author: 
 categories: [General]
 tag: [blog]
