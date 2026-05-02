@@ -10,7 +10,7 @@ tag: [blog]
 
 ![Baltej Giri](/baltejgiri.github.io/assets/img/Baltej_Giri.JPEG)
 
-Finally, I have passed my Cisco Certified Network Associate certification. It is my first networking certificate and to be honest it was hard to learn everything this exam covers. I can provides reasons why it felt like climbing a Everest!
+Finally, I have passed my Cisco Certified Network Associate certification. It is my first networking certificate and to be honest it was hard to learn everything this exam covers. I can provides reasons why it felt like climbing an Everest!
 
 Career-wise, I am working at a large healthcare provider in British Columbia, Canada - a beautiful place to be. My day to day is troubleshooting wired and wireless network, managing monitoring network system, assisting fellow co-worker with switch configurations, sometimes I get to do site visits for wireless AP replacement, wireless site survey's and few other tasks. If time allows, I do not hesitate to Cisco Press book and try to understand why a protocol/functions of in networks is needed and how it works.
 
@@ -23,11 +23,11 @@ I elaborated the three words, hoping you are okay to read through it. To further
 
 ## Motivation
  
-Motivation is why we all decides to take on a new challenge, we can be motivated by hearing someone achieved something you always wanted to achieve. A "spark in the mind" is all it takes to climb the biggest mountain on the earth, innovate something that is ground breaking or win a Marathon. Imagine a athlete without motivation like: playing a piano with no keys. So knowing, "why do you needs to earn this certification?" is the first thing you needs to write down. Your **why** needs to be strong and related to motivation so you can go along with this journey. Welcome to self-taught world my friend, there is no school, professor or a deadline waiting for you. You're the master of your fate. if the Why is not clear something else will take priority.
+Motivation is **why** we all decides to take on a new challenge, we can be motivated by hearing someone achieved something you always wanted to achieve. A "spark in the mind" is all it takes to climb the biggest mountain on the earth, innovate something that is ground breaking or win a Marathon. Imagine a athlete without motivation like: playing a piano with no keys. So knowing, "why do you needs to earn this certification?" is the first thing you needs to write down. Your **why** needs to be strong and related to motivation so you can go along with this journey. Welcome to self-taught world my friend, there is no school, professor or a deadline waiting for you. You're the master of your fate. if the Why is not clear something else will take priority.
 
 My biggest motivation is how far I have come being a self-taught IT professional, at the starting of my career in IT, imposter syndrome hit me very hard - as time passed I kept learning and growing my skill knowing I will not give up and kept putting the effort.
 
-There might be times when you have started this journey and sometime unexpected happened, I lost my father in 2022 and things were not the same for me. My why was shifted for some times, then again my mother had a heart-attack in 2024, it was hard to stay motivated but nothing I could have done to change the past.I helped my mother while needed help, when things were better - I did not forget my "why" I kept my promise to myself.
+There might be times when you have started this journey and something unexpected happened, I lost my father in 2022 and things were not the same for me. My **why** was shifted for some times, then again my mother had a heart-attack in 2024, it was hard to stay motivated but nothing I could have done to change the past.I helped my mother while needed help, when things were better - I did not forget my **why** I kept my promise to myself.
 
 Things will come, priorities will change but destiny will not. If you're feeling the same just give some time and look for the light at the end of the tunnel.
 
@@ -37,7 +37,7 @@ CCNA covers a lot of topics over 6 different domains - Network Fundamentals, Net
 
 Being persistence on your learning journey is what is going to help you, studying for a week then  skipping weeks in between does not help with recalling what you learnt few weeks ago.
 
-My recommendation, ask yourself and be honest, ask what is my lifestyle, am I working full time?, Do I have responsibilities where I will have to give time? Does my family know that I am going to need time to spend on studies every single day for at least 6 months?, considering you're trying to take this exam while have a busy schedule.
+My recommendation, ask yourself and be honest, ask what is my lifestyle, Can I commit to this now?, Do I have responsibilities where I will have to give time? Does my family know that I am going to need time to spend on studies on a schedule for at least 6 months?, considering you're trying to take this exam while have a busy schedule.
 
 Once you know your next 6 months (if your lifestyle is busy like most of has), then you needs to create a framework, a framework that has has structured plan.
 
@@ -51,7 +51,7 @@ Additionally, I would like to add Cisco's Whitepapers (technical documents), Req
 
 ### Lab
 
-Lab is must, this exam will test you on Network protocols as well as how to implement them on Cisco hardware so skipping labs -  you're basically doing a dishonour to yourself. 
+Lab is must, this exam will test you on Network protocols as well as how to implement them on Cisco hardware so skipping labs -  you're basically doing a dishonor to yourself. 
 
 You can use Cisco Packet Tracer to lab on all the topics that this exam covers, if you have the right hardware and willing to explore even more I would [Cisco Modeling Lab](https://www.cisco.com/site/us/en/learn/training-certifications/training/modeling-labs/index.html) even the free version is more enough here.
 
