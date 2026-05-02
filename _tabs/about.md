@@ -4,11 +4,11 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-Hi there! I'm Baltej Giri and I welcome you to my corner of the Internet. I consider myself a Network Operator who administrate, manage and troubleshoot both wired and wireless network. It's been close to 5 years since I have stepped into the networking field and ever since then I am in love with networks. Networking is so fascinating to me thinking how packets are send from one part of the world to another. If someone non-technical person asks me what do you do for living? My answer to them I make sure you can talk to your friend, parent, children or anyone across the world over a digital communication and the conversations goes on and on from there.
+Hi there! I'm Baltej Giri and I welcome you to my corner of the Internet. I consider myself a Network Operator - who administrate, manage and troubleshoot both wired and wireless networks. It's been close to 5 years since I have stepped into the networking field and ever since then I am in love with networks. Networking is so fascinating to me, thinking how files, pictures, voice and video are send from one part of the world to another. If a non-technical person asks me what do you do for living? My answer, I just make sure that picture you may have sent to your friend, parent, children or anyone across the world over a digital communication (with the smile on face) and the conversations goes on and on from there.
 
-I started to write on this blog so I document what I learn while understanding the networking protocols, if you're someone like me who not only wants to know what is a protocol but needs to understand how protocol work then you clicked on the right link.
+I started to write this blog so I can document what I have learnt about network protocols, if you're someone like me who not only wants to know what is a protocol but also curious to understand how a protocol work then you clicked on the right link.
 
-While I'm not at the terminal, I'm out hiking, biking, or travelling somewhere new. Feel free to connect with me on LinkedIn - I'd love to connect.
+While I'm not lost in the protocols, I'm out hiking, biking, or travelling somewhere new. If you would like to connect with me on [LinkedIn](https://www.linkedin.com/in/baltej-giri/) - I'd love to connect.
 
 ---
 
@@ -49,9 +49,3 @@ I currently hold CCNA 200-301 certification, it helped me to build a solid netwo
 - Master enterprise network design
 - Cloud networking (AWS / Azure)
 - Full CCNP Enterprise and CCNP Automation
-
----
-
-## Outside the terminal
-
-When I'm not studying or writing, you'll find me hiking, biking, or travelling somewhere new.
