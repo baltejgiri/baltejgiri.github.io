@@ -8,22 +8,21 @@ tag: [blog]
 
 # Certification Milestone
 
-![Baltej Giri](/baltejgiri.github.io/assets/img/Baltej_Giri.JPEG)
-
 Finally, I have passed my Cisco Certified Network Associate certification. It is my first networking certificate, and to be honest, it was hard to learn everything this exam covers. I can provide reasons why it felt like climbing Mount Everest!
 
-Career-wise, I am working at a large healthcare provider in British Columbia, Canada - a beautiful place to be. My day to day is troubleshooting wired and wireless network, managing monitoring network system, assisting fellow co-worker with switch configurations, sometimes I get to do site visits for wireless AP replacement, wireless site survey's and few other tasks. If time allows, I do not hesitate to Cisco Press book and try to understand why a protocol/functions of in networks is needed and how it works.
+Career-wise, I am working at a large healthcare provider in British Columbia, Canada - a beautiful place to be. I am responsible for troubleshooting wired and wireless network, managing network monitoring system, configurations and sometimes, hardware replacement and wireless survey's.
 
+![Baltej Giri](/baltejgiri.github.io/assets/img/Baltej_Giri.JPEG)
 
 # What helped to pass CCNA?
 
-The answer to this question is in following words -  **Motivation**, **Persistence** and, **Dedication**. I know these are some good looking words but hard to implement in real life and I agree with you. I did not pass this exam at first try it took me couple of tries but this time I was different. One thing was very clear to me that there are no shortcuts, I will have to understand what Cisco wants me to understand to pass this exam.
+What really helped me to pass this exam is following a framework—a framework that defines the following three words: **Motivation**, **Persistence**, and **Dedication**. I did not pass this exam at first try. It took me a couple of tries, but this time I was different. One thing was very clear to me: there are no shortcuts. I will have to understand what Cisco wants me to understand to pass this exam.
 
-I elaborated the three words, hoping you are okay to read through it. To further break these three words;
+I elaborated on the three words, hoping you are okay to read through it. To further break these three words down:
 
 ## Motivation
  
-Motivation is **why** we all decides to take on a new challenge, we can be motivated by hearing someone achieved something you always wanted to achieve. A "spark in the mind" is all it takes to climb the biggest mountain on the earth, innovate something that is ground breaking or win a Marathon. Imagine a athlete without motivation like: playing a piano with no keys. So knowing, "why do you needs to earn this certification?" is the first thing you needs to write down. Your **why** needs to be strong and related to motivation so you can go along with this journey. Welcome to self-taught world my friend, there is no school, professor or a deadline waiting for you. You're the master of your fate. if the Why is not clear something else will take priority.
+Motivation is **why** we all decides to take on a new challenge. A "spark in the mind" is all it takes to climb the biggest mountain on the earth, innovate something that is ground breaking or win a Marathon. Imagine a athlete without motivation like: playing a piano with no keys. So knowing, "why do you needs to earn this certification?" is the first thing you needs to write down. Your **why** needs to be strong and related to motivation so you can go along with this journey. Welcome to self-taught world my friend, there is no school, professor or a deadline waiting for you. You're the master of your fate. if the Why is not clear something else will take priority.
 
 My biggest motivation is how far I have come being a self-taught IT professional, at the starting of my career in IT, imposter syndrome hit me very hard - as time passed I kept learning and growing my skill knowing I will not give up and kept putting the effort.
 
