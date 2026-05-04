@@ -22,9 +22,9 @@ Radia Perlman published an article [An algorithm for distributed computation of 
 
 ## Why We Need Spanning Tree Protocol?
 
-In simple terms, one link is good but two links are better - that's just an enough justficication to have STP.
+In simple terms, one link is good but two links are better—that's justification enough to have STP.
 
-**TTL** (Time to live), have you heard about it? Well, ethernet frames have not. Ethernet Frames does not use ttl value in ethernet frames as compare to IP Packet. In an IP Packet, TTL prevents packets to circulate indefinatily due to routing loops. Every time a router process an IP packet it reduce the TTL value by 1, means packet can only roam arround until TTL value reaches to 0.
+**TTL** (Time to Live) prevents packets from circulating indefinitely due to routing loops in IP packets. However, Ethernet frames do not use TTL values like IP packets do. Every time a router process an IP packet it reduce the TTL value by 1, means packet can only roam arround until TTL value reaches to 0.
 
 Whereas ethernet frames does not use the TTL mechanisum, thus a need of Spanning Tree arise.
 
@@ -43,7 +43,7 @@ Whereas ethernet frames does not use the TTL mechanisum, thus a need of Spanning
 ### Common problems that STP prevents in a local area network:
 
 1. **Broadcast storm:**
-        - If you remember LAN switch - a broadcast frame, multicast frame, or unknown unicast frame loops around a LAN indefinitely becouse of a loop in network.
+        - In a LAN with a switch, a broadcast frame, multicast frame, or unknown unicast frame can loop around indefinitely because of a loop in the network.
 2. **MAC table instability:**
         - Switch puts an entry of learnt MAC address in its table and starts a counter of 300 seconds (by default value) and removes MAC address entry if no other frame arrives from the same source. However, a loop in network floods frames and makes mac address table instable since it can't keep up the with the number of same frames arriving from different source addresses.
 3. **Multiple frame transmission:**

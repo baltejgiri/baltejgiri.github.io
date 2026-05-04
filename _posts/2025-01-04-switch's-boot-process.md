@@ -7,7 +7,7 @@ categories: [Networking]
 tag: [blog, ccna]
 ---
 
-Boot process of a switch involves several steps that allows switch to initialize and become operational. The specific steps can varies between different models of switches or vendors but the basic steps are usually similar across most switches. This blogpost will demonstrate boot process of a Cisco Catalyst 2960 switch. Boot process helps troubleshoot hardware issues on a switch sometimes we can also use this process to ```recover a forgotten password to access the device.```
+Boot process of a switch involves several steps that allow the switch to initialize and become operational. The specific steps can vary between different models of switches or vendors but the basic steps are usually similar across most switches. This blogpost will demonstrate boot process of a Cisco Catalyst 2960 switch. Boot process helps troubleshoot hardware issues on a switch sometimes we can also use this process to ```recover a forgotten password to access the device.```
 
 
 ## Boot Loader
@@ -18,7 +18,7 @@ The boot loader finds the Cisco IOS image on the switch by first looking in a di
 
 The operating system then initializes the interfaces using Cisco IOS commands found in the operating system configuration file, config.text, stored in the switch flash memory.
 
-> The boot loader commands support initializing flash,  formatting flash, install a new IOS, changing the BOOT environment variable and recovery of a lost or forgotten passwords.
+> The boot loader commands support initializing flash, formatting flash, installing a new IOS, changing the BOOT environment variable and recovering a lost or forgotten password.
 
 ### Switch's Boot Sequence
 A cisco switch goes through five-step boot sequence process after it is powered on:
@@ -80,7 +80,7 @@ Switch LED indicators are useful when we are physically inspecting switch status
 
 ![Switch LED Indicators](/assets/2960-switch-led-indicators.jpg)
 
-> Note: Marking number 7 is pointing to the mode button, mode button needs to be pressed to cycle through LED modes from number 1 to 6. Marking number 8 indicates to the ports numbers, an LED close to switch port can be reelects there.
+> Note: Marking number 7 is pointing to the mode button; the mode button needs to be pressed to cycle through LED modes from number 1 to 6. Marking number 8 indicates the port numbers; an LED close to a switch port can be reflected there.
 
 1. __SYST:__ System LED represents the system power, whether switch is receiving power or not and it's proper functionality. An Amber LED means switch is receiving power but is not functioning properly.
 

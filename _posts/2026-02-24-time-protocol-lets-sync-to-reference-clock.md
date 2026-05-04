@@ -10,7 +10,7 @@ tag: [blog,ccna,ccnp]
 ## Overview
 Network Time Protocol (NTP) is to synchronize network device clock to a reference clock. A reference clock provides accurate time similar to an atomic clock or a GPS clock. Reference clocks are stratum 0 within the NTP hierarchy.
 
-Network Engineers review device logs to troubleshoot an issue in the network. For example, a user reports their network was inconsistency at 13:10 on December 26, 2025. Device logs are reviewed to corelate the timestamps to confirm if a device had network events.
+Network Engineers review device logs to troubleshoot issues in the network. For example, a user reports that their network had an issue at 13:10 on December 26, 2025. Device logs are reviewed to correlate the timestamps to confirm if a device had any network events.
 
 ## Device Clock
 
@@ -20,7 +20,7 @@ All devices (routers, switches, PC and so on) have an internal clock. In Cisco I
 R1#show clock
 *00:16:00.857 UTC Sat Dec 26 2025
 ```
-The default time zone is UTC (Coordinated Universal Time). The ```show clock detail``` command revels the time source.
+The default time zone is UTC (Coordinated Universal Time). The ```show clock detail``` command reveals the time source.
 
 ```bash
 R1#show clock detail
@@ -83,7 +83,7 @@ Time source is user configuration
 rtr01#
 ```
 
-Hardware calendar also knowns are built-in clock is the default time-source, the hardware clock and software clock are separate and can be configured manually.
+Hardware calendar, also known as built-in clock, is the default time source. The hardware clock and software clock are separate and can be configured manually.
 
 
 ## Hardware Clock (Calendar) Configuration

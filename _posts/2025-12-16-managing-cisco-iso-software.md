@@ -7,18 +7,18 @@ categories: [Networking,CCNA]
 tag: [blog, ccna]
 ---
 
-# Managing Cisco ISO Sofware
-Cisco ISO sofware can be managed and administrated using command line interface, at least it is the most preferred way. Today's topic is going to show some of the ways a network enginner manages the Cisco ISO software from retting device to factory settings, creating snapshot as well as copying configuration file from and saving to device.
+# Managing Cisco IOS Software
+Cisco IOS software can be managed and administered using the command-line interface, which is the most preferred method. Today's topic will show some of the ways a network engineer manages Cisco IOS software, from resetting a device to factory settings to creating snapshots and copying configuration files to and from a device.
 
 ## Resetting device to factory settings
-A factory settings on network device is like a clean slate, it's the most default state of software on device. Network devices comes with default settings from factory when they are purchanced, they are also factory reset when decommissioned from active network either for end of hardware support reason or they needs to be re-deploy for different purpose. 
+Factory settings on a network device are like a clean slate—the most default state of software on a device. Network devices come with default settings from the factory when they are purchased; they are also factory reset when decommissioned from the active network either due to end-of-hardware-support or because they need to be redeployed for a different purpose. 
 
 Before we dive into how to reset device to factory settings it is important to understand what is a configuration and what are common configurations.
 
 ## What is a configuration on device?
-Configuration on a network device is referred to a custom changes made to network device within the the prescribe programming on software. By default network devices comes with basic settings, network enginner often need to run network device with specific rules or settings - these rules and settings can be set either using web GUI or CLI.
+Configuration on a network device refers to custom changes made to a network device within the prescribed programming of the software. By default, network devices come with basic settings. Network engineers often need to run network devices with specific rules or settings—these rules and settings can be set using either the web GUI or CLI.
 
-Network device confuguration can only be set as per the programming of actual software, if a new feature or setting is desired it needs to be programmed on software.
+Network device configuration can only be set according to the programming of the actual software. If a new feature or setting is desired, it needs to be programmed into the software.
 
 Cisco router has two type of configuration;
 
@@ -27,7 +27,7 @@ Cisco router has two type of configuration;
 **Startup Configuration** configuration that is saved to NVRAM, everytime ```copy running-config startup-config``` or ```write memory``` command is executed ISO software saves custom configuration - new routes added to route table, ip addresses assigned to interfaces etc, etc.
 
 ## Device configuration wipe out process
-In order to wipe out the custom configuraton from cisco ISO software, following command ````write erase```` or ```erase startup-config``` is used from exec privilage mode then run ```reload``` command.
+To wipe out the custom configuration from Cisco IOS software, use the following command ```write erase``` or ```erase startup-config``` from exec privilege mode, then run the ```reload``` command.
 
 Example showing how to reset device to factory settings
 
@@ -50,7 +50,7 @@ Reload requested
 Router>
 ````
 
-Cisco switches with ISO Software needs one extra step to reset configuration to factory default, that is VLAN database. VLAN database needs is stored in a seperate file.
+Cisco switches with IOS software require one extra step to reset the configuration to factory default: the VLAN database. The VLAN database is stored in a separate file.
 
 To see the name of vlan database file, use ```dir``` from exec privilage mode.
 
@@ -81,9 +81,9 @@ Now your router or switch is set to factory settings.
 
 ## Creating a snapshot of default configuration
 
-Cisco ISO software allows to create file under it's flash directory. A snapshot of running configuration can benefit from revert the device's state back to working condition if a new change did not go as plan. It can also be useful if a network device is being implemented for temprarory purpose.
+Cisco ISO software allows to create file under it's flash directory. A snapshot of the running configuration can help revert the device's state back to a working condition if a new change does not go as planned. It can also be useful if a network device is being implemented for a temporary purpose.
 
-Rolling back to a default configuration or a snapshot with most common configuration is helpful.
+Rolling back to a default configuration or a snapshot with the most common configuration is helpful.
 
 Following command needs to be run from the exec privilage mode
 
@@ -168,7 +168,7 @@ Step 5. View the saved file.
 
 Importing configuration file is similar to how we exported the config file from network device using SecureCRT but with less steps.
 
-Step 1. config file format needs to be same as we seen in the exported text file however we need to make adjustments at the begannign of the file.
+Step 1. The config file format needs to be the same as what we see in the exported text file; however, we need to make adjustments at the beginning of the file.
 
 For example, file needs to look as follows;
 
@@ -193,4 +193,4 @@ Step 3. Verify the running configuration on network device, if it looks good sav
 
 ## Summary
 
-Managing cisco ios software using quick methods without needing any file transfer protocols. These methods are great while trubleshooting, setting up new device or decommissioning an existing device. However, a day to day management of devices is often achieved using TFTP or network management systems provides automated processes. We will discuss these topics in future blogs.
+Managing Cisco IOS software using quick methods without needing any file transfer protocols. These methods are great while troubleshooting, setting up a new device, or decommissioning an existing device. However, a day to day management of devices is often achieved using TFTP or network management systems provides automated processes. We will discuss these topics in future blogs.

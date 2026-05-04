@@ -46,7 +46,7 @@ Switch(config-line)# exit
 ````
 
 #### 3. Set Enable (Privileged EXEC) Password
-Secure's the privilege exec mode, enable secret password is required when moving from user exac mode to privilege exac mode. 
+Secures the privileged EXEC mode; enable secret password is required when moving from user EXEC mode to privileged EXEC mode. 
 ````plaintext
 Switch(config)# enable secret YOUR_ENABLE_PASSWORD
 ````
@@ -81,6 +81,6 @@ Switch# show version
 
 ### Conclusion
 
-By following this checklist and configuration guide, you can enhance the password security of your Cisco switch and protect it from unauthorized access. Regularly review and update your password policies and configurations to maintain a secure network environment. Although setting up basic password security provides a method to secure switches however, if there are large number of user's access the switch there is a easier access management options using AAA security framework. AAA security framework ensures that only authorized users can access specific resources and their access can be permitted or denied based when needed. AAA often implemented using RADIUS or TACACS+ protocols.
+By following this checklist and configuration guide, you can enhance the password security of your Cisco switch and protect it from unauthorized access. Regularly review and update your password policies and configurations to maintain a secure network environment. Although setting up basic password security provides a method to secure switches, if there is a large number of users accessing the switch, there are easier access management options using the AAA security framework. AAA security framework ensures that only authorized users can access specific resources and their access can be permitted or denied based when needed. AAA often implemented using RADIUS or TACACS+ protocols.
 
 

@@ -6,7 +6,7 @@ author:
 categories: [Networking]
 tag: [blog, ccna,ccnp,routing]
 ---
-Welcome to my another blogpost, this document will cover routing protocol OSPF (Open Shortest Path First). But before we dive into OSPF specifics, we needs to understand routing and types of routing. A simple OSPF lab will be shown later covering a backbone and non-backbone areas.
+Welcome to another blogpost; this document will cover routing protocol OSPF (Open Shortest Path First). But before we dive into OSPF specifics, we need to understand routing and types of routing. A simple OSPF lab will be shown later covering a backbone and non-backbone areas.
 
 ## Routing
 
@@ -14,7 +14,7 @@ Routing is the process of selecting and defining paths for data to travel from o
 
 ## Routing is two types.
 
-- __Static Routing:__ A network routing where routes are manually configured instead of being learned automatically. These routes does not change unless manually updated, making them simple but less flexible. If the routing table remains the same, a static route would be a best choice to direct traffic.
+- __Static Routing:__ A network routing where routes are manually configured instead of being learned automatically. These routes do not change unless manually updated, making them simple but less flexible. If the routing table remains the same, a static route would be a best choice to direct traffic.
  - __Dynamic Routing:__ A network mechanism where routers automatically exchange information to determine the best path for data packets to reach their destination. Dynamic routing protocols are required when routing table needs automatic updating based on a number of particular factors.
 
  The following diagram helps to understand the hierarchical view of dynamic routing protocol.
