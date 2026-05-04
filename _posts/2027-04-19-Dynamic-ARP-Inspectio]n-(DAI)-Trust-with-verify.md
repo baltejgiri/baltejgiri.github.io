@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dynamic ARP Inspection (DAI) - Trust with Verify"
-date: 2026-04-19
+date: 2027-04-19
 categories: [Networking,CCNA]
 tag: [blog,ccna-vol2-ch12]
 ---
@@ -29,7 +29,7 @@ We will use the following diagram to understand how Dynamic APR Inspection works
 
 The first method was explained in post [DHCP Snooping ](/baltejgiri.github.io/_posts/2026-04-18-DHCP-Snooping-Trusted-versus-untrusted.md) explains how trusted and untrusted switch interfaces work.
 
-The second method
+To be completed...
 
 
 
