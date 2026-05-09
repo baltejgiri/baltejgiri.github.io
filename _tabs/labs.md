@@ -2,7 +2,7 @@
 layout: page
 title: Labs
 icon: fas fa-flask
-order: 6
+order: 2
 ---
 
 A collection of my personal network labs and projects.
