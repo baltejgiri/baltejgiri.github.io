@@ -14,7 +14,7 @@ Before that, I maintained carrier-grade MPLS, VPLS, and EVPLS transport services
 
 I prioritize networks that are reliable, well-monitored, and clearly documented.
 
-When I'm not at a CLI, you'll find me hiking, biking, or deep in my home lab.
+When I'm not at a CLI, you'll find me hiking, biking, and spending time with family.
 
 ## Certifications
 
@@ -23,8 +23,8 @@ When I'm not at a CLI, you'll find me hiking, biking, or deep in my home lab.
 
 ## Skills
 
-- **Routing & Switching** — BGP, OSPF, MPLS, VLANs, STP, LACP, IPv4/IPv6
-- **Network Security** — Palo Alto NGFW, Cisco ISE, VPN (IPsec/SSL)
-- **Wireless** — Cisco 9800 WLC, Catalyst Center, Ekahau, HPE Aruba
-- **Monitoring** — SolarWinds Orion, NetFlow, NetScout, Wireshark, SNMP
-- **Platforms** — Cisco Modeling Labs, Proxmox, Linux CLI, Containerlab, GitHub
+- **Routing & Switching** —  Layer 2/3, BGP, OSPF, MPLS, STP, LACP, VLANs
+- **Infrastructure** — Cisco Catalyst, Cisco Nexus, Nokia SR OS, Cisco 9800 WLC, HPE Aruba, Ekahau
+- **Monitoring** — SolarWinds Orion, NetFlow, NetScout, SNMP
+- **Tools & Platforms** — Catalyst Center, Cisco IOS CLI, Aruba AOS-CX, SecureCRT, NetScout, Wireshark, Tcpdump
+- **Home Lab** — Cisco Modeling Labs, Proxmox, Containerlab, Git
