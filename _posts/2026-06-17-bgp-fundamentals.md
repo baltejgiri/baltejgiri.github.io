@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "BGP Fundamentals"
-date: 2026-05-17
+date: 2026-06-17
 categories: [Networking,CCNP]
 tag: [blog,encor-ch11]
 ---
