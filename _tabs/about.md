@@ -4,8 +4,6 @@ icon: fas fa-info-circle
 order: 5
 ---
 
-## About
-
 I support and operate enterprise networks across healthcare and telecommunications environments. 
 
 My recent work includes leading wireless redesign across six hospital sites supporting 600+ Cisco APs, troubleshooting MPLS-connected hospital infrastructure across 43+ sites, and owning SolarWinds Orion monitoring strategy for Interior Health Authority. 
